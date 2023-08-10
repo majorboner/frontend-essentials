@@ -1,3 +1,7 @@
 {
-  "i18next.i18nPaths": "c:/Web/self-check/public/locales,c:/Web/self-check/src/shared/config/i18n"
+  "i18next.i18nPaths": "c:/Web/self-check/public/locales,c:/Web/self-check/src/shared/config/i18n",
+  "i18n-ally.localesPaths": [
+    "public/locales",
+    "src/shared/config/i18n"
+  ]
 }
