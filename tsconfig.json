@@ -8,16 +8,25 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "*": [
+        "./src/*"
+      ]
     },
     "moduleResolution": "node",
     "noImplicitAny": true,
     "jsx": "react-jsx",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
+  // "include": [
+  //   "/config/jest/jest-setup.ts"
+  // ],
 }
