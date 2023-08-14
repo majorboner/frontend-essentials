@@ -1,9 +1,9 @@
-import { BuildOptions } from 'app/types/config';
 import webpack from 'webpack';
 import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
+import { BuildOptions } from '../../src/app/types/config';
 
 export function buildWebpackConfig(
   options: BuildOptions,
