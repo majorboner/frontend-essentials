@@ -22,6 +22,9 @@ const Navbar = ({ className }: NavbarProps) => {
         <AppLink theme={AppLinkTheme.PRIMARY} to="/about">
           {t('ssssss')}
         </AppLink>
+        <AppLink theme={AppLinkTheme.PRIMARY} to="/about">
+          {t('ssssssuck')}
+        </AppLink>
       </div>
       <img src={img} alt="123" />
     </div>
