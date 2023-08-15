@@ -1,5 +1,6 @@
 .Button {
     cursor: pointer;
+    border: none;
 }
 
 .clear {
@@ -8,4 +9,28 @@
     border: none;
     background: none;
     outline: none;
+}
+
+.background {
+    background: var(--inverted-bg-color);
+}
+
+.outline {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--font-line-m);
+}
+
+.square.size-m {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+}
+
+.square.size-l {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+}
+
+.square.size-xl {
+    width: var(--font-line-xl);
+    height: var(--font-line-xl);
 }
