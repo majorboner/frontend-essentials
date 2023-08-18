@@ -1,4 +1,3 @@
-import 'app/styles/index.scss';
 import 'app/styles/reset.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
