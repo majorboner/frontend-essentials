@@ -1,0 +1,14 @@
+.LoginForm {
+  display:flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  border: 1px solid var(--inverted-primary-color);
+}
+
+.loginBtn {
+  margin-top: 15px;
+  margin-left: auto;
+}
