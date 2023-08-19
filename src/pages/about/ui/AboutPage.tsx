@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
+import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
 
 const AboutPage = () => {
-  useEffect(() => {
-    if (Math.random() > 0.5) {
-      throw new Error();
-    }
-  });
   const { t } = useTranslation('about');
-  return <div>{t('О сайте')}</div>;
+  return (
+    <div>
+      {t('О сайте')}
+      <Counter />
+    </div>
+  );
 };
 
 export default AboutPage;
