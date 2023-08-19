@@ -8,6 +8,8 @@ import {
 
 const defaultTheme = (localStorage.getItem(THEME_KEY) as Theme) || Theme.LIGHT;
 
+document.body.className = defaultTheme;
+
 const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
