@@ -55,10 +55,13 @@ const Navbar = ({ className }: NavbarProps) => {
       >
         {t('Войти')}
       </Button>
-      <LoginModal
-        isOpen={isAuthOpen}
-        onClose={onCloseModal}
-      />
+      {isAuthOpen && (
+        <LoginModal
+          isOpen={isAuthOpen}
+          onClose={onCloseModal}
+        />
+      )}
+
     </div>
   );
 };
