@@ -1,0 +1,33 @@
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  fill: #000;
+  stroke: none;
+}
+
+.link{
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.collapsed {
+  .item{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .link {
+    transition: .1s opacity;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}

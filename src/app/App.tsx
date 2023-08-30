@@ -4,12 +4,10 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider';
-import { useAppDispatch } from './providers/StoreProvider/config/store';
 
 const App = () => {
-  const { theme } = useTheme();
   const dispatch = useAppDispatch();
 
   useEffect(() => {

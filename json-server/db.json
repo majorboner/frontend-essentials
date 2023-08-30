@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstName": "Кевг",
+    "lastName": "Улялюм",
+    "age": "23",
+    "currency": "RUB",
+    "country": "Россия",
+    "city": "Санкт-петербург",
+    "username": "MajorBoner",
+    "avatar": ""
   }
 }
