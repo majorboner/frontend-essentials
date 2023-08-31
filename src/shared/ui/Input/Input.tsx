@@ -5,13 +5,14 @@ import {
 import cls from './Input.module.scss';
 
 type HTMLInputProps
-  = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+  = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -22,6 +23,7 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly,
     ...otherProps
   } = props;
 
@@ -30,6 +32,8 @@ export const Input = memo((props: InputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const [caretPosition, setCaretPosition] = useState(0);
+
+  const isCaretVisible = isFocused && !readonly;
 
   const onBlur = () => {
     setIsFocused(false);
@@ -72,9 +76,10 @@ export const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           onChange={onChangeHandler}
           onSelect={onSelect}
+          readOnly={readonly}
           {...otherProps}
         />
-        {isFocused
+        {isCaretVisible
           && (
             <span
               className={cls.careta}

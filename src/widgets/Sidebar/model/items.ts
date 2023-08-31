@@ -18,7 +18,7 @@ export const SidebarItemsList: SidebarItemType[] = [
   },
   {
     path: RoutePath.profile,
-    text: 'Профиль',
+    text: 'Страница профиля',
     Icon: ProfileIcon,
   },
   {

@@ -28,10 +28,10 @@
   "profile": {
     "firstName": "Кевг",
     "lastName": "Улялюм",
-    "age": "23",
+    "age": 23,
     "currency": "RUB",
     "country": "Россия",
-    "city": "Санкт-петербург",
+    "city": "Санкт-Петербург",
     "username": "MajorBoner",
     "avatar": ""
   }
