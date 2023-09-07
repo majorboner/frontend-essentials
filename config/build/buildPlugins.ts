@@ -9,7 +9,7 @@ export function buildPlugins({
   isDev,
   apiUrl,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -22,9 +22,14 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
     // new ReactRefreshWebpackPlugin(),
+
   ];
+  if (isDev) {
+    // plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }));
+  }
+  return plugins;
 }
