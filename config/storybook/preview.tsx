@@ -6,10 +6,12 @@ import { ThemeProvider } from '../../src/app/providers/ThemeProvider';
 
 const withThemeProvider = (Story, context) => {
   const { theme } = context.globals.theme;
-  console.log(context.globals.theme);
+  console.log(context);
   return (
     <ThemeProvider initialTheme={theme}>
-      <Story />
+      <div className={`app ${theme || 'app-light-theme'}`}>
+        <Story />
+      </div>
     </ThemeProvider>
   );
 };
@@ -33,7 +35,17 @@ const preview: Preview = {
         title: 'Theme',
         icon: 'circlehollow',
         // Array of plain string values or MenuItem shape (see below)
-        items: ['app-light-theme', 'app-dark-theme'],
+        items: [
+          {
+            value: 'app-light-theme',
+            icon: 'circlehollow',
+            title: 'Light',
+          }, {
+            value: 'app-dark-theme',
+            icon: 'circle',
+            title: 'Dark',
+          },
+        ],
         // Change title based on selected value
         dynamicTitle: true,
       },
