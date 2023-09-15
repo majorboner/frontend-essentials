@@ -1,7 +1,6 @@
-/* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button, ButtonSize, ThemeButton } from './Button';
 
@@ -10,7 +9,7 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 export const Outline: Story = {
   args: {
@@ -20,26 +19,125 @@ export const Outline: Story = {
     size: ButtonSize.M,
     theme: ThemeButton.OUTLINE,
   },
-  // render: () => <Button theme={ThemeButton.OUTLINE}>Text</Button>,
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+export const OutlineDark: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.OUTLINE,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 export const Background: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND}>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+export const BackgroundDark: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 export const Clear: Story = {
-  render: () => <Button theme={ThemeButton.CLEAR}>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.CLEAR,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+export const ClearDark: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.CLEAR,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 export const Square: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND} square>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+export const SquareDark: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 export const SizeM: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND} square size={ButtonSize.M}>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
 export const SizeL: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND} square size={ButtonSize.L}>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.L,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
 export const SizeXL: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND} square size={ButtonSize.XL}>Text</Button>,
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.XL,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
 export const Disabled: Story = {
-  render: () => <Button theme={ThemeButton.BACKGROUND} disabled>Text</Button>,
+  args: {
+    disabled: true,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+export const DisabledDark: Story = {
+  args: {
+    disabled: true,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
