@@ -4,10 +4,10 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import Navbar from './Navbar';
+import { Sidebar } from './Sidebar';
 
-const meta: Meta<typeof Navbar> = {
-  component: Navbar,
+const meta: Meta<typeof Sidebar> = {
+  component: Sidebar,
   decorators: [(Story) => <BrowserRouter><StoreProvider><Story /></StoreProvider></BrowserRouter>],
 };
 
