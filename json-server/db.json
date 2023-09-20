@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "firstName": "Привет",
+    "firstName": "Привет123123",
     "lastName": "Улялюм",
     "age": 20,
-    "currency": "RUB",
-    "country": "Россия",
+    "currency": "USD",
+    "country": "Russia",
     "city": "Санкт-Петербург",
     "username": "MajorBoner",
-    "avatar": ""
+    "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
   }
 }
