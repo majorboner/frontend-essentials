@@ -18,10 +18,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const onToggle = () => {
     setCollapsed((collapsed) => !collapsed);
   };
-  const [test, setTest] = useState(0);
   return (
     <div
-      data-testid="sidebar"
+      data-testid="sidebar-testid"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
@@ -37,7 +36,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
           ))
         }
       </div>
-      <Button onClick={() => setTest(test + 1)}>{test}</Button>
       <Button
         data-testid="sidebar-switcher"
         theme={ThemeButton.BACKGROUND}
