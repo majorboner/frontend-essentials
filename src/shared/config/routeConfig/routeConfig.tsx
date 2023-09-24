@@ -1,7 +1,7 @@
-import { NotFound } from 'pages/NotFound';
+import { NotFound } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
-import { AboutPage } from 'pages/about';
-import { MainPage } from 'pages/main';
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
 import { RouteProps } from 'react-router-dom';
 
 type AppRoutesProps = RouteProps & {

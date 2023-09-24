@@ -5,6 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Button, ButtonSize, ThemeButton } from './Button';
 
 const meta: Meta<typeof Button> = {
+  title: 'shared/Button',
   component: Button,
 };
 
@@ -21,6 +22,7 @@ export const Outline: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const OutlineDark: Story = {
   args: {
     disabled: false,
@@ -31,6 +33,7 @@ export const OutlineDark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+
 export const Background: Story = {
   args: {
     disabled: false,
@@ -41,6 +44,7 @@ export const Background: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const BackgroundDark: Story = {
   args: {
     disabled: false,
@@ -51,6 +55,7 @@ export const BackgroundDark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+
 export const Clear: Story = {
   args: {
     disabled: false,
@@ -61,6 +66,7 @@ export const Clear: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const ClearDark: Story = {
   args: {
     disabled: false,
@@ -71,6 +77,7 @@ export const ClearDark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+
 export const Square: Story = {
   args: {
     disabled: false,
@@ -81,6 +88,7 @@ export const Square: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const SquareDark: Story = {
   args: {
     disabled: false,
@@ -91,6 +99,7 @@ export const SquareDark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+
 export const SizeM: Story = {
   args: {
     disabled: false,
@@ -101,6 +110,7 @@ export const SizeM: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const SizeL: Story = {
   args: {
     disabled: false,
@@ -111,6 +121,7 @@ export const SizeL: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const SizeXL: Story = {
   args: {
     disabled: false,
@@ -121,6 +132,7 @@ export const SizeXL: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -131,6 +143,7 @@ export const Disabled: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const DisabledDark: Story = {
   args: {
     disabled: true,

@@ -1,3 +1,5 @@
+export { Currency } from 'entities/Currency';
+export { Country } from 'entities/Country';
 export {
   Profile,
   ProfileSchema,
@@ -35,6 +37,11 @@ export {
 export {
   getProfileError,
 } from './model/selectors/getProfileError/getProfileError';
+
 export {
   getProfileForm,
 } from './model/selectors/getProfileForm/getProfileForm';
+
+export {
+  getProfileValidationErrors,
+} from './model/selectors/getProfileValidationErrors/getProfileValidationErrors';

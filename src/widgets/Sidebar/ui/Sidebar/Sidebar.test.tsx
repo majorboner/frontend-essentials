@@ -1,18 +1,18 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import { Sidebar } from './Sidebar';
+import { fireEvent, screen } from '@testing-library/react';
+import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
+import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 
-describe('Sidebar tests', () => {
-  test('Рендерится', async () => {
-    render(<BrowserRouter><Sidebar /></BrowserRouter>);
-    expect(screen.getByTestId('sidebar-testid')).toBeInTheDocument();
+describe('Sidebar.test', () => {
+  test('with only first param', () => {
+    componentRender(<Sidebar />);
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
-  test('Закрывается и открывается', async () => {
-    render(<BrowserRouter><Sidebar /></BrowserRouter>);
-    expect(screen.getByTestId('sidebar-testid')).not.toHaveClass('collapsed');
-    fireEvent.click(screen.getByTestId('sidebar-switcher'));
-    expect(screen.getByTestId('sidebar-testid')).toHaveClass('collapsed');
-    fireEvent.click(screen.getByTestId('sidebar-switcher'));
-    expect(screen.getByTestId('sidebar-testid')).not.toHaveClass('collapsed');
+
+  test('test toggle', () => {
+    componentRender(<Sidebar />);
+    const toggleBtn = screen.getByTestId('sidebar-switcher');
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+    fireEvent.click(toggleBtn);
+    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
   });
 });

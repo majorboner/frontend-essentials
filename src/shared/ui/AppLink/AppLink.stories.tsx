@@ -6,26 +6,42 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 const meta: Meta<typeof AppLink> = {
+  title: 'shared/AppLink',
   component: AppLink,
   decorators: [(Story) => <BrowserRouter><Story /></BrowserRouter>],
+  args: {
+    to: 'http://localhost:6006/',
+    children: 'App Link',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryLight: Story = {
   args: {
-    children: 'App Link',
     theme: AppLinkTheme.PRIMARY,
-    to: 'http://localhost:6006/',
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
-export const Secondary: Story = {
+
+export const PrimaryDark: Story = {
   args: {
-    children: 'App Link',
+    theme: AppLinkTheme.PRIMARY,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const SecondaryLight: Story = {
+  args: {
     theme: AppLinkTheme.SECONDARY,
-    to: 'http://localhost:6006/',
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+
+export const SecondaryDark: Story = {
+  args: {
+    theme: AppLinkTheme.SECONDARY,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };

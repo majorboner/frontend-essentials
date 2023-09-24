@@ -15,10 +15,10 @@ module.exports = {
   },
   plugins: [
     'react',
-     '@typescript-eslint',
-      'i18next',
-      "react-hooks"
-      ],
+    '@typescript-eslint',
+    'i18next',
+    "react-hooks"
+  ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -45,10 +45,16 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ]
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
 };

@@ -14,8 +14,6 @@ const preview: Preview = {
     },
     i18n,
   },
-  globalTypes: {},
-  decorators: [],
 };
 
 export default preview;

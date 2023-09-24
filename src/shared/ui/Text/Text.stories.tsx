@@ -2,12 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { BrowserRouter } from 'react-router-dom';
 import { Text, TextAlign, TextTheme } from './Text';
 
 const meta: Meta<typeof Text> = {
+  title: 'shared/Text',
   component: Text,
-  decorators: [(Story) => <BrowserRouter><Story /></BrowserRouter>],
 };
 
 export default meta;

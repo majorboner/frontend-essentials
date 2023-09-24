@@ -2,11 +2,14 @@ import path from 'path';
 import type { Config } from 'jest';
 
 const config: Config = {
+  globals: {
+    __IS_DEV__: true,
+    __API__: '',
+    __PROJECT__: 'jest',
+  },
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '\\\\node_modules\\\\',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
   moduleDirectories: [
     'node_modules',
   ],
@@ -31,10 +34,8 @@ const config: Config = {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
-  roots: [
-    '<rootDir>src',
-  ],
 };
 
 export default config;

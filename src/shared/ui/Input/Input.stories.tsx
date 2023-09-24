@@ -5,6 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
+  title: 'shared/Input',
   component: Input,
 };
 
@@ -18,6 +19,7 @@ export const Light: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
+
 export const Dark: Story = {
   args: {
     value: 'Input',
@@ -25,6 +27,7 @@ export const Dark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+
 export const WithPlaceholder: Story = {
   args: {
     value: 'Input',
@@ -33,7 +36,8 @@ export const WithPlaceholder: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
 };
-export const DarkWithPlaceholder: Story = {
+
+export const WithPlaceholderDark: Story = {
   args: {
     value: 'Input',
     readonly: true,
@@ -41,10 +45,19 @@ export const DarkWithPlaceholder: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
-export const Readonly: Story = {
+
+export const ReadonlyLight: Story = {
   args: {
     value: 'Input',
     readonly: true,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+};
+
+export const ReadonlyDark: Story = {
+  args: {
+    value: 'Input',
+    readonly: true,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
