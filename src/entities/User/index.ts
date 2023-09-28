@@ -9,10 +9,15 @@ import {
   getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';
 
+import {
+  getUserInited,
+} from './model/selectors/getUserInited/getUserInited';
+
 export {
   User,
   UserSchema,
   userReducer,
   userActions,
   getUserAuthData,
+  getUserInited,
 };
