@@ -4,11 +4,11 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
+import { Code } from './Code';
 
-const meta: Meta<typeof ArticleImageBlockComponent> = {
-  title: 'shared/ArticleImageBlockComponent',
-  component: ArticleImageBlockComponent,
+const meta: Meta<typeof Code> = {
+  title: 'shared/Code',
+  component: Code,
   decorators: [(Story) => (
     <BrowserRouter>
       <Story />
