@@ -102,32 +102,76 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "123123",
+      "id": "cKdCaru"
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "123123",
+      "id": "edP9lfT"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "AAAAAAA",
+      "id": "H9UXhH-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "S0sLV6F"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "tetst",
+      "id": "BN45tPY"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "jabberwock",
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "leaf",
       "password": "123",
       "role": "USER",
-      "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
     }
   ],
-  "profile": {
-    "firstName": "sssss234sd",
-    "lastName": "Улялюм",
-    "age": 22,
-    "currency": "EUR",
-    "country": "Kazahstan",
-    "city": "Санкт-Петербург",
-    "username": "MajorBoner",
-    "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "sssss234sd",
+      "lastName": "Улялюм",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Kazahstan",
+      "city": "Санкт-Петербург",
+      "username": "MajorBoner",
+      "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
+    },
+    {
+      "id": "2",
+      "firstName": "Maj2",
+      "lastName": "Bon222",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Ulalume",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
+    }
+  ]
 }
