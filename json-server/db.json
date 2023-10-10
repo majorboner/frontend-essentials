@@ -95,7 +95,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -108,12 +108,16 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
     },
     {
       "id": "2",
       "username": "user",
-      "password": "123"
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
     }
   ],
   "profile": {
