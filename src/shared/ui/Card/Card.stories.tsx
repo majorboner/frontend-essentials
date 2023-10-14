@@ -4,11 +4,11 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleDetails } from './ArticleDetails';
+import { Card } from './Card';
 
-const meta: Meta<typeof ArticleDetails> = {
-  title: 'entities/ArticleDetails',
-  component: ArticleDetails,
+const meta: Meta<typeof Card> = {
+  title: 'shared/Card',
+  component: Card,
   decorators: [(Story) => (
     <BrowserRouter>
       <Story />
@@ -21,9 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-    id: '1',
-  },
+  args: {},
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>
@@ -38,17 +36,6 @@ export const Dark: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
-};
-
-export const Leaf: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

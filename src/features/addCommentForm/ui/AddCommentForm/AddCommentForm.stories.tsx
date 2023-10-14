@@ -41,3 +41,14 @@ export const Dark: Story = {
     </StoreProvider>
   )],
 };
+
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};

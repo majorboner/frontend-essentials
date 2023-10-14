@@ -2,7 +2,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Article, ArticleList } from 'entities/Article';
+import { Article, ArticleList, ArticleView } from 'entities/Article';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -11,12 +11,20 @@ interface ArticlesPageProps {
 
 const article = {
   id: '1',
-  title: 'Javascript news',
+  title: 'Javascript news assssssssssads adasdasdasd fgasfwegwe',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'maj',
+    avatar: 'https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png',
+  },
   type: [
+    'IT',
+    'SCIENCE',
+    'ECONOMY',
     'IT',
   ],
   blocks: [
@@ -81,13 +89,21 @@ const article = {
   ],
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation();
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList articles={[article]} />
-    </div>
-  );
-};
+const ArticlesPage = ({ className }: ArticlesPageProps) => (
+  <div className={classNames(cls.ArticlesPage, {}, [className])}>
+    <ArticleList
+      isLoading
+      view={ArticleView.BIG}
+      articles={
+        new Array(16)
+          .fill(0)
+          .map((item, index) => ({
+            ...article,
+            id: String(index),
+          }))
+      }
+    />
+  </div>
+);
 
 export default memo(ArticlesPage);

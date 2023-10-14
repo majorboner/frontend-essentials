@@ -46,6 +46,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "no-undef": "off",
+    "react/no-array-index-key": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",

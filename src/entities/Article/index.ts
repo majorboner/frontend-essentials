@@ -2,7 +2,7 @@ export {
   ArticleDetails,
 } from './ui/ArticleDetails/ArticleDetails';
 
-export type {
+export {
   Article,
   ArticleView,
 } from './model/types/article';
