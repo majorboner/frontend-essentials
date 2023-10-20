@@ -33,7 +33,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.NavBar, {}, [className])}>
+      <header className={classNames(cls.NavBar, {}, [className])}>
         <Button
           onClick={onLogout}
           className={cls.links}
@@ -42,12 +42,12 @@ const Navbar = ({ className }: NavbarProps) => {
           {t('Выйти')}
         </Button>
         <img src={img} alt="123" />
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(cls.NavBar, {}, [className])}>
+    <header className={classNames(cls.NavBar, {}, [className])}>
       <Button
         onClick={onShowModal}
         className={cls.links}
@@ -62,7 +62,7 @@ const Navbar = ({ className }: NavbarProps) => {
         />
       )}
 
-    </div>
+    </header>
   );
 };
 

@@ -1,9 +1,10 @@
 import { Counter } from 'entities/Counter';
+import { Page } from 'shared/ui/Page/Page';
 
 const MainPage = () => (
-  <div>
+  <Page>
     <Counter />
-  </div>
+  </Page>
 );
 
 export default MainPage;

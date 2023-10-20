@@ -21,7 +21,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     setCollapsed((collapsed) => !collapsed);
   };
   return (
-    <div
+    <menu
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
@@ -52,6 +52,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
       </div>
-    </div>
+    </menu>
   );
 };
