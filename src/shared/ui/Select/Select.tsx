@@ -30,7 +30,7 @@ export const Select = memo((props: SelectProps) => {
     if (onChange) { onChange(e.target.value); }
   };
 
-  const optionsList = useMemo(() => options?.map((opt) => (
+  const optionsList = useMemo(() => options!.map((opt) => (
     <option
       className={cls.option}
       value={opt.value}

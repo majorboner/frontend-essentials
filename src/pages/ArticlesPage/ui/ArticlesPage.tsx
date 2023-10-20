@@ -7,14 +7,17 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { Page } from 'shared/ui/Page/Page';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import cls from './ArticlesPage.module.scss';
 import { articlePageActions, articlePageReducer, getArticles } from '../model/slices/articlePageSlice';
-import { fetchArticlesList } from '../model/services/fetchArticlesList';
+import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticlesPageProps {
   className?: string;
@@ -25,6 +28,7 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
+  const { t } = useTranslation();
   const {
     className,
   } = props;
@@ -39,6 +43,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     dispatch(articlePageActions.setView(view));
   }, [dispatch]);
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(articlePageActions.initState());
     dispatch(fetchArticlesList({
@@ -46,9 +54,19 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }));
   });
 
+  if (error) {
+    return (
+      <Text
+        theme={TextTheme.ERROR}
+        title={t('Произошла ошибка')}
+        text={t('Попробуйте обновить страницу')}
+      />
+    );
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page className={classNames(cls.ArticlesPage, {}, [className])}>
+      <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList
           isLoading={isLoading}
