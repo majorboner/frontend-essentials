@@ -24,10 +24,15 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps): ReactNode 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getMountedReducers();
     Object.entries(reducers).forEach(([reducerKey, reducer]) => {
-      store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
-      dispatch({ type: `@INIT ${reducerKey} reducer` });
+      const mounted = mountedReducers[reducerKey as StateSchemaKey];
+      if (!mounted) {
+        store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
+        dispatch({ type: `@INIT ${reducerKey} reducer` });
+      }
     });
+
     return () => {
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([reducerKey]) => {
