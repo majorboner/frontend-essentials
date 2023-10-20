@@ -2,8 +2,9 @@ import {
   ReducersMapObject, configureStore, CombinedState, Reducer,
 } from '@reduxjs/toolkit';
 import { $api } from 'shared/api/api';
-import { counterReducer } from '../../../../entities/Counter';
-import { userReducer } from '../../../../entities/User';
+import { scrollRestorationReducers } from 'features/scrollRestoration';
+import { counterReducer } from 'entities/Counter';
+import { userReducer } from 'entities/User';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
@@ -15,6 +16,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    scrollRestoration: scrollRestorationReducers,
   };
   const reducerManager = createReducerManager(rootReducers);
   const extraArg: ThunkExtraArg = {

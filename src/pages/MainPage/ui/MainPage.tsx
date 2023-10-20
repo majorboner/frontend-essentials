@@ -1,5 +1,5 @@
 import { Counter } from 'entities/Counter';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 const MainPage = () => (
   <Page>
