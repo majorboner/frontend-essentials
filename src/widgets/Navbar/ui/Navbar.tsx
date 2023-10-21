@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import img from 'shared/assets/icons/user-icon.png';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useCallback, useState } from 'react';
@@ -7,6 +6,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -34,6 +36,18 @@ const Navbar = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.NavBar, {}, [className])}>
+        <Text
+          title={t('Ulalume App')}
+          className={cls.appName}
+          theme={TextTheme.INVERTED}
+        />
+        <AppLink
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.PRIMARY}
+          className={cls.createBtn}
+        >
+          {t('Создать статью')}
+        </AppLink>
         <Button
           onClick={onLogout}
           className={cls.links}
@@ -41,7 +55,6 @@ const Navbar = ({ className }: NavbarProps) => {
         >
           {t('Выйти')}
         </Button>
-        <img src={img} alt="123" />
       </header>
     );
   }
