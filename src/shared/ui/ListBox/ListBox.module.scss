@@ -32,3 +32,23 @@
 .active {
   background-color: var(--list-box-active);
 }
+
+.dropBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.dropBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.dropTopLeft {
+  bottom: 100%;
+  right: 0;
+}
+
+.dropTopRight {
+  bottom: 100%;
+  left: 0;
+}
