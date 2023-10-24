@@ -70,7 +70,7 @@ export const ArticlesPageFilter = memo((props: ArticlesPageFilterProps) => {
     <div className={classNames(cls.ArticlesPageFilter, {}, [className])}>
       <HStack
         align="center"
-        justify="center"
+        justify="between"
       >
         <ArticleSortSelector
           onChangeOrder={onChangeOrder}

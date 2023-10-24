@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { Comment } from 'entities/Comment/model/types/comment';
+import { Comment } from '../../model/types/comment';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {

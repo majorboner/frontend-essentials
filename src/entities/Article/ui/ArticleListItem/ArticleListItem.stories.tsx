@@ -7,7 +7,7 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import {
   Article, ArticleBlockType, ArticleType, ArticleView,
-} from 'entities/Article/model/types/article';
+} from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {

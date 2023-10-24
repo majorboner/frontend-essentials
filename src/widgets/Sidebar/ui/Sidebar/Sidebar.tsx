@@ -22,7 +22,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     setCollapsed((collapsed) => !collapsed);
   };
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
@@ -53,6 +53,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
       </HStack>
-    </menu>
+    </aside>
   );
 };
