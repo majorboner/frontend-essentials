@@ -17,7 +17,8 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
-    "react-hooks"
+    "react-hooks",
+    'feature-sliced-imports'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -51,7 +52,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": [
       "error",
       { "argsIgnorePattern": "^_" }
-    ]
+    ],
+    "feature-sliced-imports/path-checker": 2,
   },
   globals: {
     __IS_DEV__: true,

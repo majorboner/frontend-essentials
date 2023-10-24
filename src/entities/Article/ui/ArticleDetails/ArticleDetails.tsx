@@ -4,17 +4,18 @@ import { memo, useCallback, useEffect } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDetails';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { HStack } from 'shared/ui/Stack';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
@@ -40,20 +41,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
-  // const isLoading = true;
   const data = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent block={block} className={cls.block} />;
-    case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent block={block} className={cls.block} />;
-    case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent block={block} className={cls.block} />;
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent block={block} className={cls.block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent block={block} className={cls.block} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent block={block} className={cls.block} />;
+      default:
+        return null;
     }
   }, []);
 
@@ -85,13 +85,16 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack
+          max
+          justify="center"
+        >
           <Avatar
             size={200}
             src={data?.img}
             className={cls.avatar}
           />
-        </div>
+        </HStack>
 
         <Text
           className={cls.title}

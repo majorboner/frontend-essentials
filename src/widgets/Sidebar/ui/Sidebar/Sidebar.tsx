@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useSelector } from 'react-redux';
+import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -27,7 +28,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <div className={cls.items}>
+      <VStack gap="8" className={cls.items}>
         {
           sidebarItemsList.map((item) => (
             <SidebarItem
@@ -37,7 +38,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             />
           ))
         }
-      </div>
+      </VStack>
       <Button
         data-testid="sidebar-switcher"
         theme={ThemeButton.BACKGROUND}
@@ -48,10 +49,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
       >
         {collapsed ? t('Сайдбар свернут') : t('Сайдбар развернут')}
       </Button>
-      <div className={cls.switchers}>
+      <HStack justify="center" max className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
-      </div>
+      </HStack>
     </menu>
   );
 };

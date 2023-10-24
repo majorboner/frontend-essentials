@@ -3,6 +3,7 @@ import {
   ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
 
 type HTMLInputProps
   = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
@@ -60,7 +61,10 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, {}, [className])}>
+    <HStack
+      align="center"
+      className={classNames('', {}, [className])}
+    >
       {placeholder && (
         <div className={cls.placeholder}>
           {`${placeholder}>`}
@@ -88,6 +92,6 @@ export const Input = memo((props: InputProps) => {
           )}
       </div>
 
-    </div>
+    </HStack>
   );
 });

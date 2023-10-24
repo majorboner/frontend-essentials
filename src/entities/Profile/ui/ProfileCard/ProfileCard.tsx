@@ -2,11 +2,12 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
-import { Profile } from 'entities/Profile/model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -49,9 +50,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+      <HStack
+        justify="center"
+        align="center"
+        max
+        className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}
+      >
         <Loader />
-      </div>
+      </HStack>
     );
   }
 
@@ -70,13 +76,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cls.ProfileCard, mods, [className])}>
-      <div className={cls.data}>
+      <VStack gap="8">
 
         {data?.avatar
           && (
-            <div className={cls.avatarWrapper}>
+            <HStack justify="center" max>
               <Avatar src={data?.avatar} alt="user avatar" />
-            </div>
+            </HStack>
           )}
         <Input
           value={data?.firstName}
@@ -132,7 +138,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           onChange={onChangeCountry}
           readonly={readonly}
         />
-      </div>
+      </VStack>
     </div>
   );
 };

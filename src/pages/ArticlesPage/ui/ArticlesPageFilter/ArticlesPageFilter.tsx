@@ -9,9 +9,10 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from 'entities/Article/model/types/article';
+import { HStack } from 'shared/ui/Stack';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions } from '../../model/slices/articlePageSlice';
 import {
   getArticlesPageOrder,
@@ -67,7 +68,10 @@ export const ArticlesPageFilter = memo((props: ArticlesPageFilterProps) => {
   }, [dispatch, fetchData]);
   return (
     <div className={classNames(cls.ArticlesPageFilter, {}, [className])}>
-      <div className={cls.sortWrapper}>
+      <HStack
+        align="center"
+        justify="center"
+      >
         <ArticleSortSelector
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
@@ -75,7 +79,7 @@ export const ArticlesPageFilter = memo((props: ArticlesPageFilterProps) => {
           sort={sort}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={cls.search}>
         <Input
           value={search}
