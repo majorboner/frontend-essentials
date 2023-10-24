@@ -1,7 +1,7 @@
 .app-dark-theme {
     --bg-color: rgb(71 0 163 / 45.2%);
     --inverted-bg-color: #efefef;
-    --primary-color: rgb(17 188 255);
+    --primary-color: rgb(89 208 255);
     --secondary-color: rgb(226 150 9);
     --inverted-primary-color: #00d134;
     --inverted-secondary-color: #00d853;
@@ -15,4 +15,8 @@
 
     // card
     --card-bg: rgba(105 64 158 / 56.8%);
+
+    // list-box
+    --list-box-active: rgb(105 64 158);
+    --list-box-bg: rgb(157 83 255);
 }
