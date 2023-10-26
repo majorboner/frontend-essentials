@@ -4,7 +4,8 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { Tabs } from './Tabs';
+import { ArticleType } from 'entities/Article';
+import { TabItem, Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
   title: 'shared/Tabs',
@@ -20,8 +21,30 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const tabs: TabItem[] = [
+  {
+    value: ArticleType.ALL,
+    content: 'Все',
+  },
+  {
+    value: ArticleType.IT,
+    content: 'Айти',
+  },
+  {
+    value: ArticleType.ECONOMY,
+    content: 'Экономика',
+  },
+  {
+    value: ArticleType.SCIENCE,
+    content: 'Наука',
+  },
+];
+
 export const Light: Story = {
-  args: {},
+  args: {
+    tabs,
+    value: ArticleType.ECONOMY,
+  },
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>
@@ -32,10 +55,27 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
+  args: {
+    tabs,
+    value: ArticleType.ECONOMY,
+  },
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {
+    tabs,
+    value: ArticleType.ECONOMY,
+  },
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

@@ -32,6 +32,13 @@ export const PrimaryDark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const PrimaryLeaf: Story = {
+  args: {
+    theme: AppLinkTheme.PRIMARY,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const SecondaryLight: Story = {
   args: {
     theme: AppLinkTheme.SECONDARY,
@@ -44,4 +51,11 @@ export const SecondaryDark: Story = {
     theme: AppLinkTheme.SECONDARY,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const SecondaryLeaf: Story = {
+  args: {
+    theme: AppLinkTheme.SECONDARY,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };

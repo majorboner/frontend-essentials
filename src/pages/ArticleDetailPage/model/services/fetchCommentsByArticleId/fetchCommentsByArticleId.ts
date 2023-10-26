@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
-import { ProfileValidationErrors } from 'entities/Profile/model/types/profile';
+import { ProfileValidationErrors } from 'features/EditableProfileCard/model/types/editableProfileCardSchema';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
   Comment[],

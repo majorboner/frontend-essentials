@@ -46,6 +46,11 @@ export const Dark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const WithErrorLight: Story = {
   args: {
     error: 'err',
@@ -60,6 +65,13 @@ export const WithErrorDark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const WithErrorLeaf: Story = {
+  args: {
+    error: 'err',
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const LoadingLight: Story = {
   args: {
     isLoading: true,
@@ -72,4 +84,11 @@ export const LoadingDark: Story = {
     isLoading: true,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const LoadingLeaf: Story = {
+  args: {
+    isLoading: true,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };

@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ArticlesPageFilter } from './ArticlesPageFilter';
 
 const meta: Meta<typeof ArticlesPageFilter> = {
-  title: 'shared/ArticlesPageFilter',
+  title: 'pages/ArticlesPageFilter',
   component: ArticlesPageFilter,
   decorators: [(Story) => (
     <BrowserRouter>
@@ -36,6 +36,17 @@ export const Dark: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

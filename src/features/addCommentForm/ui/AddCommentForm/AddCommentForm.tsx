@@ -41,6 +41,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
       <HStack
         align="center"
         justify="between"
+        max
         className={classNames(cls.AddCommentForm, {}, [className])}
       >
         <Input

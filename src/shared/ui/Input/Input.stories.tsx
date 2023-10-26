@@ -28,6 +28,14 @@ export const Dark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const Leaf: Story = {
+  args: {
+    value: 'Input',
+    readonly: false,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const WithPlaceholder: Story = {
   args: {
     value: 'Input',
@@ -46,6 +54,15 @@ export const WithPlaceholderDark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const WithPlaceholderLeaf: Story = {
+  args: {
+    value: 'Input',
+    readonly: true,
+    placeholder: 'Placeholder',
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const ReadonlyLight: Story = {
   args: {
     value: 'Input',
@@ -60,4 +77,12 @@ export const ReadonlyDark: Story = {
     readonly: true,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const ReadonlyLeaf: Story = {
+  args: {
+    value: 'Input',
+    readonly: true,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };

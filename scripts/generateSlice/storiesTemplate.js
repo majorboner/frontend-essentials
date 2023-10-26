@@ -1,4 +1,4 @@
-module.exports = (componentName) => `import type { Meta, StoryObj } from '@storybook/react';
+module.exports = (layerName, componentName) => `import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ${componentName} } from './${componentName}';
 
 const meta: Meta<typeof ${componentName}> = {
-  title: 'shared/${componentName}',
+  title: '${layerName}/${componentName}',
   component: ${componentName},
   decorators: [(Story) => (
     <BrowserRouter>
@@ -35,6 +35,17 @@ export const Dark: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

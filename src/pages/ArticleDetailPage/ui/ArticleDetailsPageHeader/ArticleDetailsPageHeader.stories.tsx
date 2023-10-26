@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   decorators: [(Story) => (
     <BrowserRouter>
@@ -36,6 +36,17 @@ export const Dark: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

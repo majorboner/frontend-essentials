@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article';
-import { ProfileValidationErrors } from 'entities/Profile/model/types/profile';
+import { ProfileValidationErrors } from 'features/EditableProfileCard/model/types/editableProfileCardSchema';
 
 export const fetchArticleRecommendations = createAsyncThunk<
   Article[],

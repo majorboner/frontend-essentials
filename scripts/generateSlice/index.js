@@ -5,6 +5,7 @@ const styles = require('./styleTemplate');
 const story = require('./storiesTemplate');
 const reduxSlice = require('./reduxSliceTemplate');
 const schema = require('./schemaTemplate');
+const api = require('./apiTemplate');
 
 const layer = process.argv[2];
 const slice = process.argv[3];
@@ -21,9 +22,10 @@ const makeDir = async () => {
   try {
     fs.mkdirSync(root); // new slice
     fs.mkdirSync(`${root}/ui`);
-    fs.writeFileSync(`${root}/ui/${slice}.tsx`, reactFC(slice));
-    fs.writeFileSync(`${root}/ui/${slice}.stories.tsx`, story(slice));
-    fs.writeFileSync(`${root}/ui/${slice}.module.scss`, styles(slice));
+    fs.mkdirSync(`${root}/ui/${slice}`);
+    fs.writeFileSync(`${root}/ui/${slice}/${slice}.tsx`, reactFC(slice));
+    fs.writeFileSync(`${root}/ui/${slice}/${slice}.stories.tsx`, story(layer, slice));
+    fs.writeFileSync(`${root}/ui/${slice}/${slice}.module.scss`, styles(slice));
     fs.mkdirSync(`${root}/model`);
     fs.mkdirSync(`${root}/model/slices`);
     fs.writeFileSync(`${root}/model/slices/${lowercasedSlice}Slice.ts`, reduxSlice(slice));
@@ -31,8 +33,9 @@ const makeDir = async () => {
     fs.writeFileSync(`${root}/model/types/${lowercasedSlice}Schema.ts`, schema(slice));
     fs.mkdirSync(`${root}/model/services`);
     fs.mkdirSync(`${root}/model/selectors`);
+    fs.writeFileSync(`${root}/index.ts`, api(slice));
   } catch (error) {
-    console.log('Не удалось!');
+    console.log(error);
   }
 };
 

@@ -20,8 +20,23 @@ const meta: Meta<typeof Code> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const text: string = `import { emptySplitApi } from './emptySplitApi'
+
+const extendedApi = emptySplitApi.injectEndpoints({
+  endpoints: (build) => ({
+    example: build.query({
+      query: () => 'test',
+    }),
+  }),
+  overrideExisting: false,
+})
+
+export const { useExampleQuery } = extendedApi`;
+
 export const Light: Story = {
-  args: {},
+  args: {
+    text,
+  },
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>
@@ -32,10 +47,25 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
+  args: {
+    text,
+  },
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {
+    text,
+  },
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

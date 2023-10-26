@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { ProfileValidationErrors } from 'entities/Profile/model/types/profile';
+import { ProfileValidationErrors } from 'features/EditableProfileCard/model/types/editableProfileCardSchema';
 import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(

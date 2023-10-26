@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentList.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
@@ -28,7 +29,7 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <VStack max className={classNames('', {}, [className])}>
       {comments?.map((comment) => (
         <CommentCard
           key={comment.id}
@@ -37,6 +38,6 @@ export const CommentList = memo((props: CommentListProps) => {
           comment={comment}
         />
       ))}
-    </div>
+    </VStack>
   );
 });

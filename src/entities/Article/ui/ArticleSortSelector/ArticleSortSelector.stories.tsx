@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-  title: 'shared/ArticleSortSelector',
+  title: 'entities/ArticleSortSelector',
   component: ArticleSortSelector,
   decorators: [(Story) => (
     <BrowserRouter>
@@ -36,6 +36,17 @@ export const Dark: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const Leaf: Story = {
+  args: {},
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

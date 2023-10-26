@@ -18,7 +18,8 @@
     "test:ui:ok": "npx loki approve",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006 -c ./config/storybook -s ../../public",
-    "build-storybook": "storybook build -c ./config/storybook -s ../../public"
+    "build-storybook": "storybook build -c ./config/storybook -s ../../public",
+    "generate:slice": "node ./scripts/generateSlice/index.js"
   },
   "keywords": [],
   "author": "",

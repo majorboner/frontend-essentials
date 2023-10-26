@@ -84,6 +84,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
               <Avatar src={data?.avatar} alt="user avatar" />
             </HStack>
           )}
+
         <Input
           value={data?.firstName}
           placeholder={t('имя')}

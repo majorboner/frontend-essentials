@@ -69,7 +69,7 @@ export const Leaf: Story = {
   )],
 };
 
-export const Loading: Story = {
+export const LoadingLight: Story = {
   args: {
     isLoading: true,
     comment,
@@ -77,6 +77,34 @@ export const Loading: Story = {
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const LoadingDark: Story = {
+  args: {
+    isLoading: true,
+    comment,
+  },
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    </StoreProvider>
+  )],
+};
+
+export const LoadingLeaf: Story = {
+  args: {
+    isLoading: true,
+    comment,
+  },
+  decorators: [(Story) => (
+    <StoreProvider>
+      <ThemeDecorator theme={Theme.LEAF}>
         <Story />
       </ThemeDecorator>
     </StoreProvider>

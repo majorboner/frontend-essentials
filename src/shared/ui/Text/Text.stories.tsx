@@ -30,6 +30,15 @@ export const PrimaryDark: Story = {
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
+export const PrimaryLeaf: Story = {
+  args: {
+    align: TextAlign.LEFT,
+    title: 'Sample Title',
+    text: 'Sample Text',
+    theme: TextTheme.PRIMARY,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
 export const ErrorLight: Story = {
   args: {
     align: TextAlign.LEFT,
@@ -47,6 +56,15 @@ export const ErrorDark: Story = {
     theme: TextTheme.ERROR,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+export const ErrorLeaf: Story = {
+  args: {
+    align: TextAlign.LEFT,
+    title: 'Sample Title',
+    text: 'Sample Text',
+    theme: TextTheme.ERROR,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };
 export const Center: Story = {
   args: {

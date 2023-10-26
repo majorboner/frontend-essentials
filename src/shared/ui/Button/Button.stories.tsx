@@ -34,6 +34,17 @@ export const OutlineDark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const OutlineLeaf: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.OUTLINE,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const Background: Story = {
   args: {
     disabled: false,
@@ -54,6 +65,17 @@ export const BackgroundDark: Story = {
     theme: ThemeButton.BACKGROUND,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const BackgroundLeaf: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };
 
 export const Clear: Story = {
@@ -78,6 +100,17 @@ export const ClearDark: Story = {
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
 };
 
+export const ClearLeaf: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: false,
+    size: ButtonSize.M,
+    theme: ThemeButton.CLEAR,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+};
+
 export const Square: Story = {
   args: {
     disabled: false,
@@ -98,6 +131,17 @@ export const SquareDark: Story = {
     theme: ThemeButton.BACKGROUND,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const SquareLeaf: Story = {
+  args: {
+    disabled: false,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };
 
 export const SizeM: Story = {
@@ -153,4 +197,15 @@ export const DisabledDark: Story = {
     theme: ThemeButton.BACKGROUND,
   },
   decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+};
+
+export const DisabledLeaf: Story = {
+  args: {
+    disabled: true,
+    children: 'Button',
+    square: true,
+    size: ButtonSize.M,
+    theme: ThemeButton.BACKGROUND,
+  },
+  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
 };
