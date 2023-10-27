@@ -13,6 +13,12 @@ import {
   getUserInited,
 } from './model/selectors/getUserInited/getUserInited';
 
+import {
+  getUserIsAdmin,
+  getUserRoles,
+  getUserIsManager,
+} from './model/selectors/getUserRoles/getUserRoles';
+
 export {
   User,
   UserSchema,
@@ -20,4 +26,7 @@ export {
   userActions,
   getUserAuthData,
   getUserInited,
+  getUserIsAdmin,
+  getUserRoles,
+  getUserIsManager,
 };

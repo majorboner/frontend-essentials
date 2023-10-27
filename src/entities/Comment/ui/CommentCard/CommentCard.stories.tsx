@@ -4,6 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
+import { UserRoles } from 'entities/User/model/types/user';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from './CommentCard';
 
@@ -27,6 +28,7 @@ const comment: Comment = {
   user: {
     id: '1',
     username: 'aJLSDNLKJFE',
+    roles: [UserRoles.ADMIN],
   },
 };
 

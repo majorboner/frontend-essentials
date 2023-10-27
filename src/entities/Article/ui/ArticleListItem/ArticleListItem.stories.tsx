@@ -5,6 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
+import { UserRoles } from 'entities/User/model/types/user';
 import {
   Article, ArticleBlockType, ArticleType, ArticleView,
 } from '../../model/types/article';
@@ -35,6 +36,7 @@ const article: Article = {
     id: '1',
     username: 'maj',
     avatar: 'https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png',
+    roles: [UserRoles.ADMIN],
   },
   type: [
     ArticleType.ECONOMY,

@@ -5,7 +5,9 @@ import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, getUserIsAdmin, getUserIsManager, userActions,
+} from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -22,6 +24,9 @@ const Navbar = ({ className }: NavbarProps) => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const isAdmin = useSelector(getUserIsAdmin);
+  const isManager = useSelector(getUserIsManager);
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthOpen(false);
@@ -53,6 +58,10 @@ const Navbar = ({ className }: NavbarProps) => {
         <Dropdown
           trigger={<Avatar src={authData.avatar} size={32} />}
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: t('Админка'),
+              href: RoutePath.admin,
+            }] : []),
             {
               content: t('Профиль'),
               href: RoutePath.profile + authData.id,

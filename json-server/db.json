@@ -572,14 +572,19 @@
       "id": "1",
       "username": "jabberwock",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
       "avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
     },
     {
       "id": "2",
       "username": "leaf",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
     }
   ],
