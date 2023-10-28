@@ -1,3 +1,4 @@
+import removePropsPlugin from '../../babel/removePropsPlugin';
 import { BuildOptions } from '../types/config';
 
 interface BuildBabelLoaderProps extends BuildOptions {
@@ -13,6 +14,10 @@ export function buildBabelLoader({ isDev, isTSX }: BuildBabelLoaderProps) {
       options: {
         plugins: [
           isDev && require.resolve('react-refresh/babel'),
+          isTSX && [removePropsPlugin,
+            {
+              props: ['data-testid'],
+            }],
           [
             '@babel/plugin-transform-typescript',
             { isTSX },
