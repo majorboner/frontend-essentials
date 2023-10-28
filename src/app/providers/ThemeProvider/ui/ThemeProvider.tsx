@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import {
   THEME_KEY,
   Theme,
@@ -12,7 +12,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
+const ThemeProvider = (props: ThemeProviderProps) => {
   const {
     initialTheme,
     children,
