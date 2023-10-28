@@ -2,15 +2,15 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
-import { ArticleView } from 'entities/Article/model/consts/articleConsts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
   className?: string;
-  articles: Article[];
+  articles?: Article[];
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
@@ -47,7 +47,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
     />
   );
 
-  if (!isLoading && !articles.length) {
+  if (!articles) {
+    return null;
+  }
+
+  if (!isLoading && !articles?.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <Text
@@ -59,8 +63,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length > 0
-        ? articles.map(renderArticle)
+      {articles?.length > 0
+        ? articles?.map(renderArticle)
         : null}
       {isLoading && getSkeletons(view)}
     </div>

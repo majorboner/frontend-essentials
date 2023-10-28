@@ -6,11 +6,10 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { UserRoles } from 'entities/User/model/consts/consts';
+import { ArticleType, ArticleView, ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   Article,
 } from '../../model/types/article';
-import { ArticleType, ArticleView } from 'entities/Article/model/consts/articleConsts';
-import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {

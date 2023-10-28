@@ -11,6 +11,7 @@ import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { HStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -20,7 +21,6 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
 import { ArticleBlock } from '../../model/types/article';
-import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -47,14 +47,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-      case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent block={block} className={cls.block} key={block.id} />;
-      case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent block={block} className={cls.block} key={block.id} />;
-      case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent block={block} className={cls.block} key={block.id} />;
-      default:
-        return null;
+    case ArticleBlockType.CODE:
+      return <ArticleCodeBlockComponent block={block} className={cls.block} key={block.id} />;
+    case ArticleBlockType.IMAGE:
+      return <ArticleImageBlockComponent block={block} className={cls.block} key={block.id} />;
+    case ArticleBlockType.TEXT:
+      return <ArticleTextBlockComponent block={block} className={cls.block} key={block.id} />;
+    default:
+      return null;
     }
   }, []);
 

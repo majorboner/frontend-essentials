@@ -4,27 +4,42 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleType } from '../../model/consts/articleConsts';
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ReactNode } from 'react';
+import testAvatar from 'shared/assets/tests/test.jpg';
+import { DropDownItem, Dropdown } from './Dropdown';
+import { Avatar } from '../../../Avatar/Avatar';
 
-const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/ArticleTypeTabs',
-  component: ArticleTypeTabs,
+const meta: Meta<typeof Dropdown> = {
+  title: 'shared/Dropdown',
+  component: Dropdown,
   decorators: [(Story) => (
-    <BrowserRouter>
-      <Story />
-    </BrowserRouter>
+    <div style={{ margin: 150 }}>
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    </div>
   ),
   ],
 };
+
+const trigger: ReactNode = <Avatar src={testAvatar} size={32} />;
+const items: DropDownItem[] = [
+  {
+    content: 'Профиль',
+    href: '',
+  }, {
+    content: 'Выйти',
+    onClick: () => { },
+  }];
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
+    items,
+    trigger,
+    direction: 'bottom left',
   },
   decorators: [(Story) => (
     <StoreProvider>
@@ -37,8 +52,9 @@ export const Light: Story = {
 
 export const Dark: Story = {
   args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
+    items,
+    trigger,
+    direction: 'bottom left',
   },
   decorators: [(Story) => (
     <StoreProvider>
@@ -51,8 +67,9 @@ export const Dark: Story = {
 
 export const Leaf: Story = {
   args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
+    items,
+    trigger,
+    direction: 'bottom left',
   },
   decorators: [(Story) => (
     <StoreProvider>

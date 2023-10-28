@@ -2,8 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Listbox } from '@headlessui/react';
 import { DropDirection } from 'shared/types/ui';
+import { HStack } from '../../../Stack';
 import cls from './ListBox.module.scss';
-import { HStack } from '../Stack';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxOptions {
   id: number;
@@ -23,13 +25,6 @@ interface ListBoxProps {
   direction?: DropDirection;
 }
 
-const mapDirectionClass: Record<DropDirection, string> = {
-  'bottom left': cls.dropBottomLeft,
-  'bottom right': cls.dropBottomRight,
-  'top left': cls.dropTopLeft,
-  'top right': cls.dropTopRight,
-};
-
 export const ListBox = memo((props: ListBoxProps) => {
   const {
     className,
@@ -45,7 +40,13 @@ export const ListBox = memo((props: ListBoxProps) => {
   return (
     <HStack gap="8">
       {label && (<span>{label}</span>)}
-      <Listbox value="s" onChange={onChange} disabled={readonly}>
+      <Listbox
+        as="div"
+        value={value}
+        onChange={onChange}
+        disabled={readonly}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
+      >
         <div className={cls.relativeWrapper}>
           <Listbox.Button
             as="button"
@@ -62,8 +63,10 @@ export const ListBox = memo((props: ListBoxProps) => {
               >
                 {({ active }) => (
                   <li
-                    className={classNames(cls.item, { [cls.active]: active }, [])}
-
+                    className={classNames(cls.item, {
+                      [popupCls.active]: active,
+                      [popupCls.disabled]: option.disabled,
+                    }, [])}
                   >
                     {option.value === value && '>'}
                     {option.content}

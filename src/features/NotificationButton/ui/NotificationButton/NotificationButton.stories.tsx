@@ -4,28 +4,23 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleType } from '../../model/consts/articleConsts';
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { NotificationButton } from './NotificationButton';
 
-const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/ArticleTypeTabs',
-  component: ArticleTypeTabs,
+const meta: Meta<typeof NotificationButton> = {
+  title: 'features/NotificationButton',
+  component: NotificationButton,
   decorators: [(Story) => (
     <BrowserRouter>
       <Story />
     </BrowserRouter>
-  ),
-  ],
+  )],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
+  args: {},
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>
@@ -36,10 +31,7 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
+  args: {},
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.DARK}>
@@ -50,10 +42,7 @@ export const Dark: Story = {
 };
 
 export const Leaf: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
+  args: {},
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LEAF}>
