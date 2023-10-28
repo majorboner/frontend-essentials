@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import avatar from 'shared/assets/tests/test.jpg';
 import { BrowserRouter } from 'react-router-dom';
-import { UserRoles } from 'entities/User/model/types/user';
+import { UserRoles } from 'entities/User/model/consts/consts';
 import Navbar from './Navbar';
 
 const meta: Meta<typeof Navbar> = {

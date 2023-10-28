@@ -5,10 +5,12 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { UserRoles } from 'entities/User/model/types/user';
+import { UserRoles } from 'entities/User/model/consts/consts';
 import {
-  Article, ArticleBlockType, ArticleType, ArticleView,
+  Article,
 } from '../../model/types/article';
+import { ArticleType, ArticleView } from 'entities/Article/model/consts/articleConsts';
+import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {

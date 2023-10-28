@@ -20,8 +20,8 @@ import {
 } from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
 import { fetchProfileData } from '../../model/service/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ProfileValidationErrors } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ProfileValidationErrors } from '../../model/consts/consts';
 
 const reducers: ReducersList = {
   profile: profileReducer,

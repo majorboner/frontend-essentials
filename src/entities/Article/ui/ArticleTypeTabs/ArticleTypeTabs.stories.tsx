@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleType } from '../../model/types/article';
+import { ArticleType } from 'entities/Article/model/consts/articleConsts';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta: Meta<typeof ArticleTypeTabs> = {

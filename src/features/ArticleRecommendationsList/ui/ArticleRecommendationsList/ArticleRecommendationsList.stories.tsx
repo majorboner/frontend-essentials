@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { Article } from 'entities/Article';
-import { UserRoles } from 'entities/User/model/types/user';
+import { UserRoles } from 'entities/User/model/consts/consts';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {

@@ -1,32 +1,23 @@
-import { User, UserSchema } from './model/types/user';
+export type {
+  User,
+  UserSchema,
+} from './model/types/user';
 
-import {
+export {
   userReducer,
   userActions,
 } from './model/slice/userSlice';
 
-import {
+export {
   getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';
 
-import {
+export {
   getUserInited,
 } from './model/selectors/getUserInited/getUserInited';
 
-import {
+export {
   getUserIsAdmin,
   getUserRoles,
   getUserIsManager,
 } from './model/selectors/getUserRoles/getUserRoles';
-
-export {
-  User,
-  UserSchema,
-  userReducer,
-  userActions,
-  getUserAuthData,
-  getUserInited,
-  getUserIsAdmin,
-  getUserRoles,
-  getUserIsManager,
-};
