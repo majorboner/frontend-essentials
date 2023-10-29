@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { ReactNode } from 'react';
-import testAvatar from 'shared/assets/tests/test.jpg';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import testAvatar from '@/shared/assets/tests/test.jpg';
 import { DropDownItem, Dropdown } from './Dropdown';
 import { Avatar } from '../../../Avatar/Avatar';
 

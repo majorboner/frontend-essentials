@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { t } from 'i18next';
-import { Page } from 'widgets/Page/ui/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page/ui/Page';
 import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {

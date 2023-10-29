@@ -1,5 +1,5 @@
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 import { ReactNode } from 'react';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 
 interface ThemeDecoratorProps {
   theme: Theme;
