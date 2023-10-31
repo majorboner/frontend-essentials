@@ -1,15 +1,11 @@
 import { Counter } from '@/entities/Counter';
-import { RatingCard } from '@/entities/Rating';
+import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page/ui/Page';
 
 const MainPage = () => (
   <Page>
     <Counter />
-    <RatingCard
-      feedbackTitle="feedback Title"
-      title="title"
-      hasFeedback
-    />
+    <ArticleRating articleId="7" />
   </Page>
 );
 

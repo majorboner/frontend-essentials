@@ -645,5 +645,69 @@
       "username": "Ulalume",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 3,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "3"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 4,
+      "id": "zSL7trQ"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 4,
+      "id": "cjMws4k"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 4,
+      "id": "sa6edt4"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 4,
+      "feedback": "Hahaha",
+      "id": "vFUnFoB"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }
