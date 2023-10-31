@@ -23,7 +23,7 @@ export function Popover(props: PopoverProps) {
   const menuClasses = [mapDirectionClass[direction]];
   return (
     <HUIPopover className={classNames(cls.Popover, {}, [className, popupCls.popup])}>
-      <HUIPopover.Button className={popupCls.trigger}>
+      <HUIPopover.Button as="div" className={popupCls.trigger}>
         {trigger}
       </HUIPopover.Button>
 
