@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RatingSchema } from '../types/ratingSchema';
+import { Rating } from '../types/ratingSchema';
 
-const initialState: RatingSchema = {};
+const initialState: Rating = {
+  rate: 0,
+  feedback: '',
+};
 
 const ratingSlice = createSlice({
   name: 'rating',
