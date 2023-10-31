@@ -21,3 +21,7 @@ export {
   getUserRoles,
   getUserIsManager,
 } from './model/selectors/getUserRoles/getUserRoles';
+
+export {
+  UserRoles,
+} from './model/consts/consts';

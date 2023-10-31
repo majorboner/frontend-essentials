@@ -54,6 +54,7 @@ module.exports = {
       { "argsIgnorePattern": "^_" }
     ],
     "feature-sliced-imports/path-checker": ['error', { alias: '@' }],
+    "feature-sliced-imports/api-strict-imports": ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

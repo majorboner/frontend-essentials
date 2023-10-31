@@ -7,7 +7,7 @@ import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
-import { UserRoles } from '@/entities/User/model/consts/consts';
+import { UserRoles } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 
 export type AppRoutesProps = RouteProps & {

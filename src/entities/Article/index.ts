@@ -27,3 +27,7 @@ export {
 export {
   getArticleDetailsData,
 } from './model/selectors/articleDetails';
+
+export {
+  ArticleSortSelector,
+} from './ui/ArticleSortSelector/ArticleSortSelector';

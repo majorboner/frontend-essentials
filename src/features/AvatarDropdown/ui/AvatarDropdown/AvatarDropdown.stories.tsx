@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { AvatarDropdown } from './AvatarDropdown';
-import { UserRoles } from '@/entities/User/model/consts/consts';
+import { UserRoles } from '@/entities/User';
 import testAvatar from '@/shared/assets/tests/test.jpg';
 
 // @ts-ignore

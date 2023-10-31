@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
-import { UserRoles } from '@/entities/User/model/consts/consts';
+import { UserRoles } from '@/entities/User';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {

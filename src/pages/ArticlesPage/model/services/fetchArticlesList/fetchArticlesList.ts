@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article, ArticleType } from '@/entities/Article';
-import { ProfileValidationErrors } from '@/features/EditableProfileCard/model/consts/consts';
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 import {
   getArticlesPageLimit,
@@ -11,6 +10,7 @@ import {
   getArticlesPageSort,
   getArticlesPageType,
 } from '../../selectors/articlesPageSelectors';
+import { ProfileValidationErrors } from '@/features/EditableProfileCard';
 
 interface FetchArticlesListProps {
   replace?: boolean;
