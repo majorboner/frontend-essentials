@@ -7,7 +7,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { NotificationItem } from './NotificationItem';
 
 const meta: Meta<typeof NotificationItem> = {
-  title: 'shared/NotificationItem',
+  title: 'entities/NotificationItem',
   component: NotificationItem,
   decorators: [(Story) => (
     <BrowserRouter>
@@ -20,8 +20,17 @@ const meta: Meta<typeof NotificationItem> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const item = {
+  description: 'Описание уведомления',
+  id: '1',
+  title: 'Заголовок уведомления',
+  href: '#',
+};
+
 export const Light: Story = {
-  args: {},
+  args: {
+    item,
+  },
   decorators: [(Story) => (
     <StoreProvider>
       <ThemeDecorator theme={Theme.LIGHT}>

@@ -53,7 +53,7 @@ module.exports = {
       "error",
       { "argsIgnorePattern": "^_" }
     ],
-    "feature-sliced-imports/path-checker": 2,
+    "feature-sliced-imports/path-checker": ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
