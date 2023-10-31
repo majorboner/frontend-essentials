@@ -7,12 +7,6 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const codeBabelLoader = buildBabelLoader({ ...options, isTSX: false });
   const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTSX: true });
 
-  // const typescriptLoader = {
-  //   test: /\.tsx?$/,
-  //   use: 'ts-loader',
-  //   exclude: /node_modules/,
-  // };
-
   const cssLoader = buildCssLoader(options.isDev);
 
   const svgLoader = {
