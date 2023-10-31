@@ -644,6 +644,39 @@
       "city": "Москва",
       "username": "Ulalume",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
+    },
+    {
+      "id": "3",
+      "firstName": "Maj2",
+      "lastName": "Bon222",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Ulalume",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
+    },
+    {
+      "id": "4",
+      "firstName": "Maj2",
+      "lastName": "Bon222",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Ulalume",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
+    },
+    {
+      "id": "5",
+      "firstName": "Maj2",
+      "lastName": "Bon222",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Ulalume",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
     }
   ],
   "article-ratings": [
@@ -703,11 +736,18 @@
       "profileId": "1"
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "2",
+      "rate": 1,
       "userId": "1",
-      "profileId": "2"
+      "feedback": "отстой",
+      "id": "SQ2TGPQ"
+    },
+    {
+      "profileId": "3",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "супер",
+      "id": "LZ2KS3u"
     }
   ]
 }

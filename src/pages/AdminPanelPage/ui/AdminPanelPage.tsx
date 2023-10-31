@@ -3,7 +3,7 @@ import { Counter } from '@/entities/Counter';
 import { Page } from '@/widgets/Page/ui/Page';
 
 const AdminPanelPage = () => {
-  const { t } = useTranslation('about');
+  const { t } = useTranslation();
   return (
     <Page>
       {t('Админ панель')}

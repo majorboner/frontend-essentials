@@ -17,7 +17,7 @@ interface ArticleListProps {
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
   const {
     className,
