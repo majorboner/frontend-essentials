@@ -13,6 +13,7 @@ interface DrawerProps {
   children: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;

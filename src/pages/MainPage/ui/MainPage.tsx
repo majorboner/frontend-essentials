@@ -1,11 +1,15 @@
 import { Counter } from '@/entities/Counter';
-import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { RatingCard } from '@/entities/Rating';
 import { Page } from '@/widgets/Page/ui/Page';
 
 const MainPage = () => (
   <Page>
     <Counter />
-    <StarRating />
+    <RatingCard
+      feedbackTitle="feedback Title"
+      title="title"
+      hasFeedback
+    />
   </Page>
 );
 
