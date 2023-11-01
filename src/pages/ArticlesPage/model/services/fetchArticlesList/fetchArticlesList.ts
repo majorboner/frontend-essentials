@@ -10,7 +10,7 @@ import {
   getArticlesPageSort,
   getArticlesPageType,
 } from '../../selectors/articlesPageSelectors';
-import { ProfileValidationErrors } from '@/features/EditableProfileCard';
+import { ProfileValidationErrors } from '@/shared/const/error';
 
 interface FetchArticlesListProps {
   replace?: boolean;

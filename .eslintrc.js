@@ -58,6 +58,10 @@ module.exports = {
       alias: '@',
       testFiles: ['**/*.test.*', '**/*.stories.tsx', '**/ThemeDecorator.tsx']
     }],
+    "feature-sliced-imports/fsd-cross-layer-imports": ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing',]
+    }],
   },
   globals: {
     __IS_DEV__: true,

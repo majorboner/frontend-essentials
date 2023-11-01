@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { BrowserRouter } from 'react-router-dom';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Skeleton } from './Skeleton';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Skeleton> = {
   title: 'shared/Skeleton',

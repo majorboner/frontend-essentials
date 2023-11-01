@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { BrowserRouter } from 'react-router-dom';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
-import { UserRoles } from '@/entities/User';
+import { UserRoles } from '@/shared/const/user';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {

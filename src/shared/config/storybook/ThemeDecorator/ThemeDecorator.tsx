@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line feature-sliced-imports/fsd-cross-layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 interface ThemeDecoratorProps {
   theme: Theme;

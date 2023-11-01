@@ -21,7 +21,7 @@ import {
 import { fetchProfileData } from '../../model/service/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { ProfileValidationErrors } from '../../model/consts/consts';
+import { ProfileValidationErrors } from '@/shared/const/error';
 
 const reducers: ReducersList = {
   profile: profileReducer,

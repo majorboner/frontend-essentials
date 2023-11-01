@@ -1,4 +1,3 @@
-import '@/app/styles/reset.scss';
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -7,7 +6,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App = () => {
   const { theme } = useTheme();

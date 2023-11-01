@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { BrowserRouter } from 'react-router-dom';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import avatar from '@/shared/assets/tests/test.jpg';
-import { UserRoles } from '@/entities/User';
 import Navbar from './Navbar';
+import { Theme } from '@/shared/const/theme';
+import { UserRoles } from '@/shared/const/user';
 
 const meta: Meta<typeof Navbar> = {
   title: 'widgets/Navbar',

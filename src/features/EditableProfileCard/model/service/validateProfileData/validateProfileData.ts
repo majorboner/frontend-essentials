@@ -1,5 +1,5 @@
 import { Profile } from '@/entities/Profile';
-import { ProfileValidationErrors } from '../../consts/consts';
+import { ProfileValidationErrors } from '@/shared/const/error';
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {
