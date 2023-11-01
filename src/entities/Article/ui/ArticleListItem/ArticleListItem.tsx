@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import EyeLogo from '@/shared/assets/icons/eye.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Card } from '@/shared/ui/Card/Card';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ThemeButton } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/const/router';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { ArticleView, ArticleBlockType } from '../../model/consts/articleConsts';
 import cls from './ArticleListItem.module.scss';
 import {

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button';
+import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { HStack, VStack } from '@/shared/ui/Stack';

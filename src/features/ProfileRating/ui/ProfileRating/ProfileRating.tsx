@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/Rating';
 import { getProfileRating, useRateProfile } from '../../api/profileRatingApi';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { getUserAuthData } from '@/entities/User';
 
 interface ProfileRatingProps {
