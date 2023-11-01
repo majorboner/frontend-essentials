@@ -8,7 +8,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
-import { getRouteArticleEdit, getRouteArticles, getRouteNotFound } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -26,12 +26,10 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    if (article?.id) {
+    if (article) {
       navigate(getRouteArticleEdit(article.id));
-    } else {
-      navigate(getRouteNotFound());
     }
-  }, [article?.id, navigate]);
+  }, [article, navigate]);
 
   return (
     <HStack align="center" className={classNames('', {}, [className])}>
