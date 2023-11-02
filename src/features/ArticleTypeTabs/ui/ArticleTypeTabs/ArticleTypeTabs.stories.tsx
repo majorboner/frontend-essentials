@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { ArticleType } from '../../model/consts/articleConsts';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ArticleType } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
   title: 'entities/ArticleTypeTabs',
