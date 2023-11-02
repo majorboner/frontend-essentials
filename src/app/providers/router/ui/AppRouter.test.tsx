@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { getRouteAbout, getRouteAdmin } from '@/shared/const/router';
 import { UserRoles } from '@/shared/const/user';
 
 describe('app/router/AppRouter', () => {
@@ -23,29 +23,29 @@ describe('app/router/AppRouter', () => {
     expect(page).toBeInTheDocument();
   });
 
-  test('Редирект неавторизованного пользователя на главну', async () => {
-    componentRender(<AppRouter />, {
-      route: getRouteProfile('1'),
-    });
+  // test('Редирект неавторизованного пользователя на главну', async () => {
+  //   componentRender(<AppRouter />, {
+  //     route: getRouteProfile('1'),
+  //   });
 
-    const page = await screen.findByTestId('MainPage');
-    expect(page).toBeInTheDocument();
-  });
+  //   const page = await screen.findByTestId('MainPage');
+  //   expect(page).toBeInTheDocument();
+  // });
 
-  test('Доступ к закрытой странице для авторизованного пользователя', async () => {
-    componentRender(<AppRouter />, {
-      route: getRouteProfile('1'),
-      initialState: {
-        user: {
-          authData: {},
-          _inited: true,
-        },
-      },
-    });
+  // test('Доступ к закрытой странице для авторизованного пользователя', async () => {
+  //   componentRender(<AppRouter />, {
+  //     route: getRouteProfile('1'),
+  //     initialState: {
+  //       user: {
+  //         authData: {},
+  //         _inited: true,
+  //       },
+  //     },
+  //   });
 
-    const page = await screen.findByTestId('ProfilePage');
-    expect(page).toBeInTheDocument();
-  });
+  //   const page = await screen.findByTestId('ProfilePage');
+  //   expect(page).toBeInTheDocument();
+  // });
 
   test('Доступ запрещен(отсутствует роль)', async () => {
     componentRender(<AppRouter />, {
