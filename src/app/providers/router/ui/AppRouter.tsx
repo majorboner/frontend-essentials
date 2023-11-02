@@ -23,11 +23,9 @@ const AppRouter = () => {
     );
   }, []);
   return (
-    <Suspense fallback={<PageLoader />}>
-      <Routes>
-        {Object.values(routeConfig).map(renderWithWrapper)}
-      </Routes>
-    </Suspense>
+    <Routes>
+      {Object.values(routeConfig).map(renderWithWrapper)}
+    </Routes>
   );
 };
 export default memo(AppRouter);

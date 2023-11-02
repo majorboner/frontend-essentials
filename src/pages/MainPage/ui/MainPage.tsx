@@ -3,7 +3,7 @@ import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page';
 
 const MainPage = () => (
-  <Page>
+  <Page data-testid="MainPage">
     <Counter />
     <ArticleRating articleId="7" />
   </Page>
