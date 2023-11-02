@@ -19,6 +19,6 @@ export const getRouteAdmin = () => '/admin';
 export const getRouteArticles = () => '/articles';
 export const getRouteForbidden = () => '/forbidden';
 export const getRouteArticleCreate = () => '/articles/new';
-export const getRouteProfile = (id: string) => `profile/${id}`;
+export const getRouteProfile = (id: string) => `/profile/${id}`;
 export const getRouteArticleDetail = (id: string) => `/articles/${id}`;
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
