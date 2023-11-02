@@ -1,23 +1,21 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { counterActions } from '../model/slice/counterSlice';
-import { getCounterValue }
+import { useCounterActions } from '../model/slice/counterSlice';
+import { useCounterValue }
   from '../model/selectors/getCounterValue/getCounterValue';
 
 export const Counter = () => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const counterValue = useCounterValue();
 
-  const counterValue = useSelector(getCounterValue);
+  const { decrement, increment } = useCounterActions();
 
-  const increment = () => {
-    dispatch(counterActions.increment());
+  const handlerInc = () => {
+    increment();
   };
-
-  const decrement = () => {
-    dispatch(counterActions.decrement());
+  const handlerDec = () => {
+    decrement();
   };
 
   return (
@@ -26,13 +24,13 @@ export const Counter = () => {
         {counterValue}
       </h1>
       <Button
-        onClick={increment}
+        onClick={handlerInc}
         theme={ThemeButton.OUTLINE}
       >
         {t('Инкремент')}
       </Button>
       <Button
-        onClick={decrement}
+        onClick={handlerDec}
         theme={ThemeButton.OUTLINE}
       >
         {t('Декремент')}
