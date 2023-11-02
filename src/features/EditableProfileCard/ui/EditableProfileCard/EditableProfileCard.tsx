@@ -105,8 +105,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             />
           ))}
         <ProfileCard
-
-
           data={formData}
           isLoading={isLoading}
           error={error}
