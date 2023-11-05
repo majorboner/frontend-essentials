@@ -1,4 +1,7 @@
-module.exports = (layerName, componentName) => `import type { Meta, StoryObj } from '@storybook/react';
+module.exports = (
+	layerName,
+	componentName,
+) => `import type { Meta, StoryObj } from '@storybook/react';
 
 import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '@/shared/const/theme';

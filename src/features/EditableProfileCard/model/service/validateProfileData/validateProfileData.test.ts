@@ -4,55 +4,63 @@ import { ProfileValidationErrors } from '@/shared/const/error';
 import { validateProfileData } from './validateProfileData';
 
 const data = {
-  username: 'admin',
-  age: 21,
-  country: Country.Russia,
-  lastName: 'uallal',
-  firstName: 'ddd',
-  city: 'asssf',
-  currency: Currency.RUB,
+	username: 'admin',
+	age: 21,
+	country: Country.Russia,
+	lastName: 'uallal',
+	firstName: 'ddd',
+	city: 'asssf',
+	currency: Currency.RUB,
 };
 
 describe('validateProfileData.test', () => {
-  test('success', async () => {
-    const result = validateProfileData(data);
+	test('success', async () => {
+		const result = validateProfileData(data);
 
-    expect(result).toEqual([]);
-  });
+		expect(result).toEqual([]);
+	});
 
-  test('without firstname and lastname', async () => {
-    const result = validateProfileData({ ...data, firstName: '', lastName: '' });
+	test('without firstname and lastname', async () => {
+		const result = validateProfileData({
+			...data,
+			firstName: '',
+			lastName: '',
+		});
 
-    expect(result).toEqual([ProfileValidationErrors.INCORRECT_NAME]);
-  });
+		expect(result).toEqual([ProfileValidationErrors.INCORRECT_NAME]);
+	});
 
-  test('should return age error', async () => {
-    const result = validateProfileData({ ...data, age: NaN });
+	test('should return age error', async () => {
+		const result = validateProfileData({ ...data, age: NaN });
 
-    expect(result).toEqual([ProfileValidationErrors.INCORRECT_AGE]);
-  });
+		expect(result).toEqual([ProfileValidationErrors.INCORRECT_AGE]);
+	});
 
-  test('incorrect country', async () => {
-    const result = validateProfileData({ ...data, country: undefined });
+	test('incorrect country', async () => {
+		const result = validateProfileData({ ...data, country: undefined });
 
-    expect(result).toEqual([ProfileValidationErrors.INCORRECT_COUNTRY]);
-  });
+		expect(result).toEqual([ProfileValidationErrors.INCORRECT_COUNTRY]);
+	});
 
-  test('incorrect all', async () => {
-    const result = validateProfileData({
-      ...data, country: undefined, lastName: '', firstName: '', age: NaN,
-    });
+	test('incorrect all', async () => {
+		const result = validateProfileData({
+			...data,
+			country: undefined,
+			lastName: '',
+			firstName: '',
+			age: NaN,
+		});
 
-    expect(result).toEqual([
-      ProfileValidationErrors.INCORRECT_NAME,
-      ProfileValidationErrors.INCORRECT_AGE,
-      ProfileValidationErrors.INCORRECT_COUNTRY,
-    ]);
-  });
+		expect(result).toEqual([
+			ProfileValidationErrors.INCORRECT_NAME,
+			ProfileValidationErrors.INCORRECT_AGE,
+			ProfileValidationErrors.INCORRECT_COUNTRY,
+		]);
+	});
 
-  test('no data', async () => {
-    const result = validateProfileData(undefined);
+	test('no data', async () => {
+		const result = validateProfileData(undefined);
 
-    expect(result).toEqual([ProfileValidationErrors.NO_DATA]);
-  });
+		expect(result).toEqual([ProfileValidationErrors.NO_DATA]);
+	});
 });

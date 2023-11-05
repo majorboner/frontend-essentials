@@ -13,58 +13,63 @@ import { updateProfileData } from '../../model/service/updateProfileData/updateP
 import { profileActions } from '../../model/slice/profileSlice';
 
 interface EditableProfileCardHeaderProps {
-  className?: string;
+	className?: string;
 }
 
-export const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps) => {
-  const { t } = useTranslation('profile');
-  const authData = useSelector(getUserAuthData);
-  const profileData = useSelector(getProfileData);
-  const canEdit = authData?.id === profileData?.id;
-  const readonly = useSelector(getProfileReadonly);
-  const dispatch = useAppDispatch();
-  const onEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(false));
-  }, [dispatch]);
-  const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.cancelEdit());
-  }, [dispatch]);
-  const onSaveEdit = useCallback(() => {
-    dispatch(updateProfileData());
-  }, [dispatch]);
-  return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Text title={t('Профиль')} />
-      {canEdit && (
-        <div>
-          {readonly ? (
-            <Button
-              theme={ThemeButton.OUTLINE}
-              onClick={onEdit}
-              data-testid="EditableProfileCardHeader.editButton"
-            >
-              {t('Редактировать')}
-            </Button>
-          ) : (
-            <>
-              <Button
-                theme={ThemeButton.OUTLINE}
-                onClick={onSaveEdit}
-                data-testid="EditableProfileCardHeader.saveButton"
-
-              >
-                {t('Сохранить')}
-              </Button>
-              <Button
-                theme={ThemeButton.OUTLINE}
-                onClick={onCancelEdit}
-              >
-                {t('Отменить')}
-              </Button>
-            </>
-          )}
-        </div>
-      )}
-    </HStack>
-  );
+export const EditableProfileCardHeader = ({
+	className,
+}: EditableProfileCardHeaderProps) => {
+	const { t } = useTranslation('profile');
+	const authData = useSelector(getUserAuthData);
+	const profileData = useSelector(getProfileData);
+	const canEdit = authData?.id === profileData?.id;
+	const readonly = useSelector(getProfileReadonly);
+	const dispatch = useAppDispatch();
+	const onEdit = useCallback(() => {
+		dispatch(profileActions.setReadonly(false));
+	}, [dispatch]);
+	const onCancelEdit = useCallback(() => {
+		dispatch(profileActions.cancelEdit());
+	}, [dispatch]);
+	const onSaveEdit = useCallback(() => {
+		dispatch(updateProfileData());
+	}, [dispatch]);
+	return (
+		<HStack
+			max
+			justify="between"
+			className={classNames('', {}, [className])}
+		>
+			<Text title={t('Профиль')} />
+			{canEdit && (
+				<div>
+					{readonly ? (
+						<Button
+							theme={ThemeButton.OUTLINE}
+							onClick={onEdit}
+							data-testid="EditableProfileCardHeader.editButton"
+						>
+							{t('Редактировать')}
+						</Button>
+					) : (
+						<>
+							<Button
+								theme={ThemeButton.OUTLINE}
+								onClick={onSaveEdit}
+								data-testid="EditableProfileCardHeader.saveButton"
+							>
+								{t('Сохранить')}
+							</Button>
+							<Button
+								theme={ThemeButton.OUTLINE}
+								onClick={onCancelEdit}
+							>
+								{t('Отменить')}
+							</Button>
+						</>
+					)}
+				</div>
+			)}
+		</HStack>
+	);
 };

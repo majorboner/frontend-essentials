@@ -8,32 +8,37 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileRating } from '@/features/ProfileRating';
 
 interface ProfilePageProps {
-  className?: string;
+	className?: string;
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-  const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
+	const { t } = useTranslation();
+	const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Text
-        theme={TextTheme.ERROR}
-        title={t('Произошла ошибка')}
-        text={t('Попробуйте обновить страницу')}
-      />
-    );
-  }
+	if (!id) {
+		return (
+			<Text
+				theme={TextTheme.ERROR}
+				title={t('Произошла ошибка')}
+				text={t('Попробуйте обновить страницу')}
+			/>
+		);
+	}
 
-  return (
-    <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
-      <VStack max gap="16">
-        <EditableProfileCard />
-        <ProfileRating profileId={id} />
-      </VStack>
-    </Page>
-
-  );
+	return (
+		<Page
+			data-testid="ProfilePage"
+			className={classNames('', {}, [className])}
+		>
+			<VStack
+				max
+				gap="16"
+			>
+				<EditableProfileCard />
+				<ProfileRating profileId={id} />
+			</VStack>
+		</Page>
+	);
 };
 
 export default ProfilePage;

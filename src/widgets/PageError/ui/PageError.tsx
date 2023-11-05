@@ -5,23 +5,28 @@ import { VStack } from '@/shared/ui/Stack';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
-  className?: string;
+	className?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation();
-  const reloadPage = () => {
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
-  };
-  return (
-    <VStack
-      justify="center"
-      align="center"
-      className={classNames(cls.PageError, {}, [className])}
-    >
-      <p>{t('Произошла непредвиденная ошибка')}</p>
-      <Button onClick={reloadPage} theme={ThemeButton.OUTLINE}>{t('Обновить страницу')}</Button>
-    </VStack>
-  );
+	const { t } = useTranslation();
+	const reloadPage = () => {
+		// eslint-disable-next-line no-restricted-globals
+		location.reload();
+	};
+	return (
+		<VStack
+			justify="center"
+			align="center"
+			className={classNames(cls.PageError, {}, [className])}
+		>
+			<p>{t('Произошла непредвиденная ошибка')}</p>
+			<Button
+				onClick={reloadPage}
+				theme={ThemeButton.OUTLINE}
+			>
+				{t('Обновить страницу')}
+			</Button>
+		</VStack>
+	);
 };

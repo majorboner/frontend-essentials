@@ -5,30 +5,30 @@
 @import 'themes/leaf';
 
 body {
-    font: var(--font-m);
-    color: var(--primary-color);
-    min-height: 100vh;
+	font: var(--font-m);
+	color: var(--primary-color);
+	min-height: 100vh;
 }
 
 .app {
-    background: var(--bg-color);
+	background: var(--bg-color);
 }
 
 .content-page {
-    display: flex;
+	display: flex;
 }
 
 *::-webkit-scrollbar {
-    width: 12px;
-    height: 8px;
+	width: 12px;
+	height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--card-bg);
+	background: var(--card-bg);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);
-    border-radius: 20px;
-    border: 3px solid var(--primary-color);
+	background-color: var(--inverted-primary-color);
+	border-radius: 20px;
+	border: 3px solid var(--primary-color);
 }

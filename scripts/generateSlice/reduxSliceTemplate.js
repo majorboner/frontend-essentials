@@ -1,6 +1,7 @@
 module.exports = (componentName) => {
-  const lowercasedName = componentName[0].toLowerCase() + componentName.slice(1);
-  return `import { createSlice } from '@reduxjs/toolkit';
+	const lowercasedName =
+		componentName[0].toLowerCase() + componentName.slice(1);
+	return `import { createSlice } from '@reduxjs/toolkit';
 import { ${componentName}Schema } from '../types/${lowercasedName}Schema';
 
 const initialState: ${componentName}Schema = {};

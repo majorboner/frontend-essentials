@@ -4,16 +4,16 @@ import { HStack } from '@/shared/ui/Stack';
 import cls from './PageLoader.module.scss';
 
 interface PageLoaderProps {
-  className?: string;
+	className?: string;
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
-  <HStack
-    max
-    justify="center"
-    align="center"
-    className={classNames(cls.PageLoader, {}, [className])}
-  >
-    <Loader />
-  </HStack>
+	<HStack
+		max
+		justify="center"
+		align="center"
+		className={classNames(cls.PageLoader, {}, [className])}
+	>
+		<Loader />
+	</HStack>
 );

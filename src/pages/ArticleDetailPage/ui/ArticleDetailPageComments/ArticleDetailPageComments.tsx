@@ -14,37 +14,45 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 
 interface ArticleDetailPageCommentsProps {
-  id?: string;
+	id?: string;
 }
 
-export const ArticleDetailPageComments = memo((props: ArticleDetailPageCommentsProps) => {
-  const { t } = useTranslation('articles');
-  const { id } = props;
-  const dispatch = useAppDispatch();
-  const comments = useSelector(getArticleComments.selectAll);
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+export const ArticleDetailPageComments = memo(
+	(props: ArticleDetailPageCommentsProps) => {
+		const { t } = useTranslation('articles');
+		const { id } = props;
+		const dispatch = useAppDispatch();
+		const comments = useSelector(getArticleComments.selectAll);
+		const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+		const onSendComment = useCallback(
+			(text: string) => {
+				dispatch(addCommentForArticle(text));
+			},
+			[dispatch],
+		);
 
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-  });
+		useInitialEffect(() => {
+			dispatch(fetchCommentsByArticleId(id));
+		});
 
-  return (
-    <VStack
-      gap="16"
-      max
-    >
-      <Text size={TextSize.L} title={t('Комментарии')} />
-      <Suspense fallback={<Loader />}>
-        <AddCommentForm onSendComment={onSendComment} />
-      </Suspense>
-      <CommentList
-        isLoading={commentsIsLoading}
-        comments={comments}
-      />
-    </VStack>
-  );
-});
+		return (
+			<VStack
+				gap="16"
+				max
+			>
+				<Text
+					size={TextSize.L}
+					title={t('Комментарии')}
+				/>
+				<Suspense fallback={<Loader />}>
+					<AddCommentForm onSendComment={onSendComment} />
+				</Suspense>
+				<CommentList
+					isLoading={commentsIsLoading}
+					comments={comments}
+				/>
+			</VStack>
+		);
+	},
+);

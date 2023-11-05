@@ -7,48 +7,55 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Popover } from './Popover';
 
 const meta: Meta<typeof Popover> = {
-  title: 'shared/Popover',
-  component: Popover,
-  decorators: [(Story) => (
-    <BrowserRouter>
-      <Story />
-    </BrowserRouter>
-  ),
-  ],
+	title: 'shared/Popover',
+	component: Popover,
+	decorators: [
+		(Story) => (
+			<BrowserRouter>
+				<Story />
+			</BrowserRouter>
+		),
+	],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LIGHT}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LIGHT}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Dark: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.DARK}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Leaf: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LEAF}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LEAF}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };

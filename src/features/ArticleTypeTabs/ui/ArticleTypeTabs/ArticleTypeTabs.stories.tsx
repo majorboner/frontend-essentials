@@ -8,57 +8,64 @@ import { ArticleTypeTabs } from './ArticleTypeTabs';
 import { ArticleType } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/ArticleTypeTabs',
-  component: ArticleTypeTabs,
-  decorators: [(Story) => (
-    <BrowserRouter>
-      <Story />
-    </BrowserRouter>
-  ),
-  ],
+	title: 'entities/ArticleTypeTabs',
+	component: ArticleTypeTabs,
+	decorators: [
+		(Story) => (
+			<BrowserRouter>
+				<Story />
+			</BrowserRouter>
+		),
+	],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LIGHT}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		value: ArticleType.ALL,
+		onChangeType: () => {},
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LIGHT}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Dark: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		value: ArticleType.ALL,
+		onChangeType: () => {},
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.DARK}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Leaf: Story = {
-  args: {
-    value: ArticleType.ALL,
-    onChangeType: () => { },
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LEAF}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		value: ArticleType.ALL,
+		onChangeType: () => {},
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LEAF}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };

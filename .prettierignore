@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+.vscode
+node_modules
+.idea
+.loki
+reports

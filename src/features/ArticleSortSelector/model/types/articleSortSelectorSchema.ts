@@ -1,3 +1,1 @@
-export interface ArticleSortSelectorSchema {
-
-}
+export interface ArticleSortSelectorSchema {}

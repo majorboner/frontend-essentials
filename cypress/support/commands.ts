@@ -12,4 +12,4 @@ Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentCommands);
 Cypress.Commands.addAll(ratingCommands);
 
-export { };
+export {};

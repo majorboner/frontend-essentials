@@ -3,10 +3,10 @@ import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page';
 
 const MainPage = () => (
-  <Page data-testid="MainPage">
-    <Counter />
-    <ArticleRating articleId="7" />
-  </Page>
+	<Page data-testid="MainPage">
+		<Counter />
+		<ArticleRating articleId="7" />
+	</Page>
 );
 
 export default MainPage;

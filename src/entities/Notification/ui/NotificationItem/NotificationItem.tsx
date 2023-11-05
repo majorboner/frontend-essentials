@@ -7,32 +7,35 @@ import cls from './NotificationItem.module.scss';
 import { NotificationSchema } from '../../model/types/notificationSchema';
 
 interface NotificationItemProps {
-  className?: string;
-  item: NotificationSchema;
+	className?: string;
+	item: NotificationSchema;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-  const {
-    className,
-    item,
-  } = props;
+	const { className, item } = props;
 
-  const content = (
-    <Card
-      theme={CardTheme.OUTLINE}
-      className={classNames(cls.NotificationItem, {}, [className])}
-    >
-      <Text title={item.title} text={item.description} />
-    </Card>
-  );
+	const content = (
+		<Card
+			theme={CardTheme.OUTLINE}
+			className={classNames(cls.NotificationItem, {}, [className])}
+		>
+			<Text
+				title={item.title}
+				text={item.description}
+			/>
+		</Card>
+	);
 
-  if (item.href) {
-    return (
-      <AppLink to={item.href} className={cls.link}>
-        {content}
-      </AppLink>
-    );
-  }
+	if (item.href) {
+		return (
+			<AppLink
+				to={item.href}
+				className={cls.link}
+			>
+				{content}
+			</AppLink>
+		);
+	}
 
-  return content;
+	return content;
 });

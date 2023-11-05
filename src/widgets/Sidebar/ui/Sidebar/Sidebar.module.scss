@@ -1,44 +1,44 @@
 .Sidebar {
-    height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width-collapsed);
-    background: var(--inverted-bg-color);
-    transition: width 0.3s ease-in-out;
-    position: relative;
+	height: calc(100vh - var(--navbar-height));
+	width: var(--sidebar-width-collapsed);
+	background: var(--inverted-bg-color);
+	transition: width 0.3s ease-in-out;
+	position: relative;
 }
 
 .switchers {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
 }
 
 .items {
-    margin-top: 16px;
-    margin-left: 30px;
+	margin-top: 16px;
+	margin-left: 30px;
 }
 
 .collapseButton {
-    position: absolute;
-    right: -32px;
-    bottom: 24px;
+	position: absolute;
+	right: -32px;
+	bottom: 24px;
 }
 
 .collapsed {
-    width: var(--sidebar-width);
+	width: var(--sidebar-width);
 
-    .items {
-        margin-left: 0;
-        align-items: center;
-    }
+	.items {
+		margin-left: 0;
+		align-items: center;
+	}
 
-    .switchers{
-        flex-direction: column;
-    }
+	.switchers {
+		flex-direction: column;
+	}
 
-    .link {
-        transition: .1s opacity;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+	.link {
+		transition: 0.1s opacity;
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
 }

@@ -9,9 +9,17 @@ import { Theme } from '@/shared/const/theme';
 import { UserRoles } from '@/shared/const/user';
 
 const meta: Meta<typeof Navbar> = {
-  title: 'widgets/Navbar',
-  component: Navbar,
-  decorators: [(Story) => <BrowserRouter><StoreProvider><Story /></StoreProvider></BrowserRouter>],
+	title: 'widgets/Navbar',
+	component: Navbar,
+	decorators: [
+		(Story) => (
+			<BrowserRouter>
+				<StoreProvider>
+					<Story />
+				</StoreProvider>
+			</BrowserRouter>
+		),
+	],
 };
 
 export default meta;
@@ -19,64 +27,85 @@ type Story = StoryObj<typeof meta>;
 
 // @ts-ignore
 const state: StateSchema = {
-  user: {
-    authData: {
-      id: '1',
-      username: 'Ulalume',
-      avatar,
-      roles: [UserRoles.ADMIN],
-    },
-    _inited: true,
-  },
+	user: {
+		authData: {
+			id: '1',
+			username: 'Ulalume',
+			avatar,
+			roles: [UserRoles.ADMIN],
+		},
+		_inited: true,
+	},
 };
 
 export const Light: Story = {
-  args: {
-  },
-  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 
 export const Dark: Story = {
-  args: {
-  },
-  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 
 export const Leaf: Story = {
-  args: {
-  },
-  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 
 export const AuthorizedLight: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider initialState={state}>
-      <ThemeDecorator theme={Theme.LIGHT}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider initialState={state}>
+				<ThemeDecorator theme={Theme.LIGHT}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const AuthorizedDark: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider initialState={state}>
-      <ThemeDecorator theme={Theme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider initialState={state}>
+				<ThemeDecorator theme={Theme.DARK}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const AuthorizedLeaf: Story = {
-  args: {},
-  decorators: [(Story) => (
-    <StoreProvider initialState={state}>
-      <ThemeDecorator theme={Theme.LEAF}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {},
+	decorators: [
+		(Story) => (
+			<StoreProvider initialState={state}>
+				<ThemeDecorator theme={Theme.LEAF}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };

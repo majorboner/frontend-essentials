@@ -4,33 +4,30 @@ import { Comment } from '@/entities/Comment';
 import { ProfileValidationErrors } from '@/shared/const/error';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
-  Comment[],
-  string | undefined,
-  ThunkConfig<string>
->(
-  'article/fetchCommentsByArticleId',
-  async (articleID, thunkApi) => {
-    const { extra, rejectWithValue } = thunkApi;
+	Comment[],
+	string | undefined,
+	ThunkConfig<string>
+>('article/fetchCommentsByArticleId', async (articleID, thunkApi) => {
+	const { extra, rejectWithValue } = thunkApi;
 
-    if (!articleID) {
-      return rejectWithValue('err');
-    }
+	if (!articleID) {
+		return rejectWithValue('err');
+	}
 
-    try {
-      const response = await extra.api.get<Comment[]>('/comments', {
-        params: {
-          articleID,
-          _expand: 'user',
-        },
-      });
+	try {
+		const response = await extra.api.get<Comment[]>('/comments', {
+			params: {
+				articleID,
+				_expand: 'user',
+			},
+		});
 
-      if (!response.data) {
-        throw new Error();
-      }
+		if (!response.data) {
+			throw new Error();
+		}
 
-      return response.data;
-    } catch (e) {
-      return rejectWithValue(`${[ProfileValidationErrors.SERVER_ERROR]}`);
-    }
-  },
-);
+		return response.data;
+	} catch (e) {
+		return rejectWithValue(`${[ProfileValidationErrors.SERVER_ERROR]}`);
+	}
+});

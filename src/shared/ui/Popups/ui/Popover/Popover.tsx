@@ -7,29 +7,29 @@ import popupCls from '../../styles/popup.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 
 interface PopoverProps {
-  className?: string;
-  trigger: ReactNode
-  direction?: DropDirection;
-  children: ReactNode;
+	className?: string;
+	trigger: ReactNode;
+	direction?: DropDirection;
+	children: ReactNode;
 }
 
 export function Popover(props: PopoverProps) {
-  const {
-    className,
-    trigger,
-    direction = 'bottom left',
-    children,
-  } = props;
-  const menuClasses = [mapDirectionClass[direction]];
-  return (
-    <HUIPopover className={classNames(cls.Popover, {}, [className, popupCls.popup])}>
-      <HUIPopover.Button as="div" className={popupCls.trigger}>
-        {trigger}
-      </HUIPopover.Button>
+	const { className, trigger, direction = 'bottom left', children } = props;
+	const menuClasses = [mapDirectionClass[direction]];
+	return (
+		<HUIPopover
+			className={classNames(cls.Popover, {}, [className, popupCls.popup])}
+		>
+			<HUIPopover.Button
+				as="div"
+				className={popupCls.trigger}
+			>
+				{trigger}
+			</HUIPopover.Button>
 
-      <HUIPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>
-        {children}
-      </HUIPopover.Panel>
-    </HUIPopover>
-  );
+			<HUIPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>
+				{children}
+			</HUIPopover.Panel>
+		</HUIPopover>
+	);
 }

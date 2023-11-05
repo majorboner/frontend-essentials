@@ -7,14 +7,15 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Code } from './Code';
 
 const meta: Meta<typeof Code> = {
-  title: 'shared/Code',
-  component: Code,
-  decorators: [(Story) => (
-    <BrowserRouter>
-      <Story />
-    </BrowserRouter>
-  ),
-  ],
+	title: 'shared/Code',
+	component: Code,
+	decorators: [
+		(Story) => (
+			<BrowserRouter>
+				<Story />
+			</BrowserRouter>
+		),
+	],
 };
 
 export default meta;
@@ -34,40 +35,46 @@ const extendedApi = emptySplitApi.injectEndpoints({
 export const { useExampleQuery } = extendedApi`;
 
 export const Light: Story = {
-  args: {
-    text,
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LIGHT}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		text,
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LIGHT}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Dark: Story = {
-  args: {
-    text,
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		text,
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.DARK}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };
 
 export const Leaf: Story = {
-  args: {
-    text,
-  },
-  decorators: [(Story) => (
-    <StoreProvider>
-      <ThemeDecorator theme={Theme.LEAF}>
-        <Story />
-      </ThemeDecorator>
-    </StoreProvider>
-  )],
+	args: {
+		text,
+	},
+	decorators: [
+		(Story) => (
+			<StoreProvider>
+				<ThemeDecorator theme={Theme.LEAF}>
+					<Story />
+				</ThemeDecorator>
+			</StoreProvider>
+		),
+	],
 };

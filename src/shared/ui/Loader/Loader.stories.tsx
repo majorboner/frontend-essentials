@@ -5,24 +5,42 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Loader } from './Loader';
 
 const meta: Meta<typeof Loader> = {
-  title: 'shared/Loader',
-  component: Loader,
+	title: 'shared/Loader',
+	component: Loader,
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {},
-  decorators: [(Story) => <ThemeDecorator theme={Theme.LIGHT}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 
 export const Dark: Story = {
-  args: {},
-  decorators: [(Story) => <ThemeDecorator theme={Theme.DARK}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 
 export const Leaf: Story = {
-  args: {},
-  decorators: [(Story) => <ThemeDecorator theme={Theme.LEAF}><Story /></ThemeDecorator>],
+	args: {},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
