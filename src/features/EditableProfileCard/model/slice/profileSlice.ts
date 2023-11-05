@@ -1,6 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
 import { Profile } from '@/entities/Profile';
 import { fetchProfileData } from '../service/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../service/updateProfileData/updateProfileData';
@@ -11,16 +9,6 @@ const initialState: ProfileSchema = {
   isLoading: false,
   readonly: true,
   error: undefined,
-  form: __PROJECT__ === 'storybook' ? {
-    age: 22,
-    avatar: 'static/media/src/shared/assets/tests/test.jpg',
-    city: 'Moscow',
-    country: Country.Armenia,
-    currency: Currency.EUR,
-    firstName: 'Major',
-    lastName: 'Boner',
-    username: 'Ukla',
-  } : undefined,
 };
 
 export const profileSlice = createSlice({
@@ -37,7 +25,7 @@ export const profileSlice = createSlice({
     },
     updateProfile: (state, action: PayloadAction<Profile>) => {
       state.form = {
-        ...state.data,
+        ...state.form,
         ...action.payload,
       };
     },

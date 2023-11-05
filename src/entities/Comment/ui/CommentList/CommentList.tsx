@@ -36,6 +36,7 @@ export const CommentList = memo((props: CommentListProps) => {
           isLoading={isLoading}
           className={cls.comment}
           comment={comment}
+          data-testid="CommentList"
         />
       ))}
     </VStack>

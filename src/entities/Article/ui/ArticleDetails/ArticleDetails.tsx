@@ -47,14 +47,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent block={block} className={cls.block} key={block.id} />;
-    case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent block={block} className={cls.block} key={block.id} />;
-    case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent block={block} className={cls.block} key={block.id} />;
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent block={block} className={cls.block} key={block.id} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent block={block} className={cls.block} key={block.id} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent block={block} className={cls.block} key={block.id} />;
+      default:
+        return null;
     }
   }, []);
 
@@ -103,7 +103,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           text={data?.subtitle}
           size={TextSize.L}
         />
-        <div className={cls.articleInfo}>
+        <div
+          className={cls.articleInfo}
+          data-testid="ArticleDetails.Info"
+        >
           <Icon Svg={EyeIcon} className={cls.icon} />
           <Text text={String(data?.views)} />
         </div>
@@ -118,7 +121,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <div className={classNames(cls.ArticleDetails, {}, [className])} data-testid="ArticleDetails">
         {content}
       </div>
     </DynamicModuleLoader>

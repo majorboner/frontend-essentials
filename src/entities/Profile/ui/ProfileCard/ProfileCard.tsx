@@ -91,6 +91,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           readonly={readonly}
           onChange={onChangeFirstName}
+          data-testid="ProfileCard.firstName"
         />
         <Input
           value={data?.lastName}
@@ -98,6 +99,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           readonly={readonly}
           className={cls.input}
           onChange={onChangeLastName}
+          data-testid="ProfileCard.lastName"
         />
         <Input
           value={data?.age}
@@ -105,6 +107,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           readonly={readonly}
           className={cls.input}
           onChange={onChangeAge}
+          data-testid="ProfileCard.age"
         />
         <Input
           value={data?.city}
@@ -112,6 +115,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           readonly={readonly}
           className={cls.input}
           onChange={onChangeCity}
+          data-testid="ProfileCard.city"
         />
         <Input
           value={data?.avatar}
@@ -119,6 +123,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           readonly={readonly}
           className={cls.input}
           onChange={onChangeAvatar}
+          data-testid="ProfileCard.avatar"
         />
         <Input
           value={data?.username}
@@ -126,18 +131,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
           readonly={readonly}
           className={cls.input}
           onChange={onChangeUsername}
+          data-testid="ProfileCard.username"
         />
         <CurrencySelect
           className={cls.input}
           value={data?.currency}
           onChange={onChangeCurrency}
           readonly={readonly}
+          data-testid="ProfileCard.currency"
         />
         <CountrySelect
           className={cls.input}
           value={data?.country}
           onChange={onChangeCountry}
           readonly={readonly}
+          data-testid="ProfileCard.country"
         />
       </VStack>
     </div>

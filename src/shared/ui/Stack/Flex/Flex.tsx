@@ -1,4 +1,4 @@
-import { ReactNode, memo } from 'react';
+import { HTMLAttributes, ReactNode, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -33,7 +33,9 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gapXL,
 };
 
-export interface FlexProps {
+type DivProps = HTMLAttributes<HTMLDivElement>
+
+export interface FlexProps extends DivProps {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
@@ -52,6 +54,7 @@ export const Flex = memo((props: FlexProps) => {
     direction = 'row',
     gap = '8',
     max = false,
+    ...otherProps
   } = props;
 
   const classes = [
@@ -63,7 +66,10 @@ export const Flex = memo((props: FlexProps) => {
   ];
 
   return (
-    <div className={classNames(cls.Flex, { [cls.max]: max }, classes)}>
+    <div
+      className={classNames(cls.Flex, { [cls.max]: max }, classes)}
+      {...otherProps}
+    >
       {children}
     </div>
   );
