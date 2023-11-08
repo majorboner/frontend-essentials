@@ -14,6 +14,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import { ArticlePageInfiniteList } from '../ArticlePageInfiniteList/ArticlePageInfiniteList';
+import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -26,6 +27,8 @@ const reducers: ReducersList = {
 const ArticlesPage = (props: ArticlesPageProps) => {
 	const { className } = props;
 
+	const data = useArticleItemById('1');
+	console.log(data);
 	const dispatch = useAppDispatch();
 	const [searchParams] = useSearchParams();
 
