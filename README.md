@@ -125,6 +125,26 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ---
 
+### Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+в него передается объект с опциями
+
+{
+name: название фича-флага,
+on: функция, которая отработает после Включения фичи
+of: функция, которая отработает после ВЫключения фичи
+}
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+---
+
 ### Работа с данными
 
 Взаимодействие с данными осуществляется с помощью redux toolkit.
@@ -162,4 +182,4 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - [notificationButton](/src/features/notificationButton)
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)
+- [scrollRestoration](/src/features/scrollRestoration)
