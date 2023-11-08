@@ -14,6 +14,8 @@ import cls from './ArticleDetailPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleDetailPageComments';
 import { ArticleRating } from '@/features/ArticleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticleDetailPageProps {
 	className?: string;
@@ -26,7 +28,8 @@ const reducers: ReducersList = {
 const ArticleDetailPage = (props: ArticleDetailPageProps) => {
 	const { className } = props;
 	const { id } = useParams<{ id: string }>();
-
+	const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+	const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 	if (!id) {
 		return null;
 	}
@@ -40,7 +43,8 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
 				>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails id={id} />
-					<ArticleRating articleId={id} />
+					{isCounterEnabled && <Counter />}
+					{isArticleRatingEnabled && <ArticleRating articleId={id} />}
 					<ArticleRecommendationsList />
 					<ArticleDetailPageComments id={id} />
 				</VStack>

@@ -520,6 +520,10 @@
 			"username": "jabberwock",
 			"password": "123",
 			"roles": ["ADMIN", "USER"],
+			"features": {
+				"isArticleRatingEnabled": true,
+				"isCounterEnabled": false
+			},
 			"avatar": "https://static1.personality-database.com/profile_images/f35fb38f28734adc8b2d78814c484899.png"
 		},
 		{
@@ -527,6 +531,10 @@
 			"username": "leaf",
 			"password": "123",
 			"roles": ["USER"],
+			"features": {
+				"isArticleRatingEnabled": false,
+				"isCounterEnabled": true
+			},
 			"avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkIkCDOhnAMSvebwfYCWAP9BfClApgWJt7Q&usqp=CAU"
 		},
 		{
@@ -534,6 +542,10 @@
 			"username": "testuser",
 			"password": "testpass",
 			"roles": ["USER"],
+			"features": {
+				"isArticleRatingEnabled": true,
+				"isCounterEnabled": false
+			},
 			"avatar": "https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/crash_test_dummy.png"
 		}
 	],
