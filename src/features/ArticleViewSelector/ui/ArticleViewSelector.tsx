@@ -46,6 +46,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 							{ [cls.selected]: viewType.view === view },
 							[],
 						)}
+						width={24}
+						height={24}
 					/>
 				</Button>
 			))}

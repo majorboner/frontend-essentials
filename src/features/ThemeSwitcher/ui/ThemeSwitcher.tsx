@@ -8,6 +8,7 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Theme } from '@/shared/const/theme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ThemeSwitcherProps {
 	className?: string;
@@ -28,7 +29,11 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 			className={classNames(cls.ThemeSwitcher, {}, [className, cls[theme]])}
 			onClick={toggleHandler}
 		>
-			{theme === Theme.LIGHT ? <LightTheme /> : <DarkTheme />}
+			<Icon
+				Svg={theme === Theme.LIGHT ? LightTheme : DarkTheme}
+				width={40}
+				height={40}
+			/>
 		</Button>
 	);
 });
