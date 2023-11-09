@@ -9,6 +9,8 @@ import { HStack, VStack } from '@/shared/ui/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { ToggleFeature } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface SidebarProps {
 	className?: string;
@@ -21,7 +23,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
 	const onToggle = () => {
 		setCollapsed((collapsed) => !collapsed);
 	};
-	return (
+
+	const SidebarDeprecated = (
 		<aside
 			data-testid="sidebar"
 			className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
@@ -59,5 +62,26 @@ export const Sidebar = ({ className }: SidebarProps) => {
 				<LangSwitcher short={collapsed} />
 			</HStack>
 		</aside>
+	);
+
+	const SidebarRedesined = (
+		<aside
+			data-testid="sidebar"
+			className={classNames(
+				cls.SidebarRedesigned,
+				{ [cls.collapsed]: collapsed },
+				[className],
+			)}
+		>
+			<AppLogo className={cls.appLogo} />
+		</aside>
+	);
+
+	return (
+		<ToggleFeature
+			feature="isAppRedesigned"
+			off={SidebarDeprecated}
+			on={SidebarRedesined}
+		/>
 	);
 };

@@ -563,10 +563,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app-light-theme",
+        "theme": "app-dark-theme",
         "isFirstVisit": false,
         "settingsPageHasBeenOpened": false
       },
@@ -581,10 +582,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": false
       },
       "jsonSettings": {
-        "theme": "app-dark-theme",
+        "theme": "app-light-theme",
         "isFirstVisit": false,
         "settingsPageHasBeenOpened": false
       },
