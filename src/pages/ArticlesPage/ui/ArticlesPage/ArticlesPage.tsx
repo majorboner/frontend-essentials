@@ -15,6 +15,7 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import { ArticlePageInfiniteList } from '../ArticlePageInfiniteList/ArticlePageInfiniteList';
 import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -50,6 +51,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 				onScrollEnd={onLoadNextPart}
 				className={classNames(cls.ArticlesPage, {}, [className])}
 			>
+				<ArticlePageGreeting />
 				<ArticlesPageFilter />
 				<ArticlePageInfiniteList className={cls.list} />
 			</Page>
