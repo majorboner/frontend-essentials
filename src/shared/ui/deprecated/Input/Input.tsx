@@ -8,7 +8,7 @@ import {
 } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
-import { HStack } from '../Stack';
+import { HStack } from '../../redesigned/Stack';
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,

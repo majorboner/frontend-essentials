@@ -1,5 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { t } from 'i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
@@ -45,7 +46,7 @@ const App = () => {
 							header={<Navbar />}
 							content={<AppRouter />}
 							sidebar={<Sidebar />}
-							toolbar={<div>asdasd</div>}
+							toolbar={<div>{t('')}</div>}
 						/>
 					</Suspense>
 				</div>

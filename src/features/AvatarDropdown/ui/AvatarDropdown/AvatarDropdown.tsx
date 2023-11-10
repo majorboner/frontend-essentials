@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import {
 	getUserAuthData,
 	getUserIsAdmin,
@@ -12,6 +12,9 @@ import {
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { ToggleFeature } from '@/shared/lib/features';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
 
 interface AvatarDropdownProps {
 	className?: string;
@@ -33,34 +36,53 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 		return null;
 	}
 
+	const items = [
+		...(isAdminPanelAvailable
+			? [
+					{
+						content: t('Админка'),
+						href: getRouteAdmin(),
+					},
+			  ]
+			: []),
+		{
+			content: t('Профиль'),
+			href: getRouteProfile(authData.id),
+		},
+		{
+			content: t('Выйти'),
+			onClick: onLogout,
+		},
+	];
+
 	return (
-		<Dropdown
-			className={classNames('', {}, [className])}
-			trigger={
-				<Avatar
-					fallbackInverted
-					src={authData.avatar}
-					size={32}
+		<ToggleFeature
+			feature="isAppRedesigned"
+			on={
+				<Dropdown
+					className={classNames('', {}, [className])}
+					trigger={
+						<Avatar
+							src={authData.avatar}
+							size={48}
+						/>
+					}
+					items={items}
 				/>
 			}
-			items={[
-				...(isAdminPanelAvailable
-					? [
-							{
-								content: t('Админка'),
-								href: getRouteAdmin(),
-							},
-					  ]
-					: []),
-				{
-					content: t('Профиль'),
-					href: getRouteProfile(authData.id),
-				},
-				{
-					content: t('Выйти'),
-					onClick: onLogout,
-				},
-			]}
+			off={
+				<DropdownDeprecated
+					className={classNames('', {}, [className])}
+					trigger={
+						<AvatarDeprecated
+							fallbackInverted
+							src={authData.avatar}
+							size={32}
+						/>
+					}
+					items={items}
+				/>
+			}
 		/>
 	);
 });
