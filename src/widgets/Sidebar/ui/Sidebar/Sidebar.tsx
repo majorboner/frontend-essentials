@@ -10,7 +10,9 @@ import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeature } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 interface SidebarProps {
 	className?: string;
@@ -59,7 +61,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
 				className={cls.switchers}
 			>
 				<ThemeSwitcher />
-				<LangSwitcher short={collapsed} />
+				<LangSwitcher
+					short={collapsed}
+					className={cls.lang}
+				/>
 			</HStack>
 		</aside>
 	);
@@ -69,11 +74,40 @@ export const Sidebar = ({ className }: SidebarProps) => {
 			data-testid="sidebar"
 			className={classNames(
 				cls.SidebarRedesigned,
-				{ [cls.collapsed]: collapsed },
+				{ [cls.collapsedRedesigned]: collapsed },
 				[className],
 			)}
 		>
-			<AppLogo className={cls.appLogo} />
+			<AppLogo
+				className={cls.appLogo}
+				size={collapsed ? 30 : 50}
+			/>
+			<VStack
+				gap="8"
+				className={cls.items}
+			>
+				{sidebarItemsList.map((item) => (
+					<SidebarItem
+						item={item}
+						collapsed={collapsed}
+						key={item.path}
+					/>
+				))}
+			</VStack>
+			<Icon
+				Svg={ArrowIcon}
+				onClick={onToggle}
+				clickable
+				data-testid="sidebar-switcher"
+				className={classNames(cls.collapseButton, {}, [className])}
+			/>
+			<div className={cls.switchers}>
+				<ThemeSwitcher />
+				<LangSwitcher
+					short={collapsed}
+					className={cls.lang}
+				/>
+			</div>
 		</aside>
 	);
 
