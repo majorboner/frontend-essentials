@@ -21,6 +21,8 @@ interface PageProps extends TestProps {
 	onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const Page = memo((props: PageProps) => {
 	const { className, children, onScrollEnd } = props;
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -33,7 +35,11 @@ export const Page = memo((props: PageProps) => {
 
 	useInfiniteScroll({
 		triggerRef,
-		wrapperRef,
+		wrapperRef: toggleFeatures({
+			name: 'isAppRedesigned',
+			on: () => undefined,
+			off: () => wrapperRef,
+		}),
 		callback: onScrollEnd,
 	});
 
@@ -44,7 +50,7 @@ export const Page = memo((props: PageProps) => {
 				position: e.currentTarget.scrollTop,
 			}),
 		);
-	}, 300);
+	}, 500);
 
 	useInitialEffect(() => {
 		wrapperRef.current.scrollTop = scrollPosition;
@@ -64,6 +70,7 @@ export const Page = memo((props: PageProps) => {
 			)}
 			onScroll={onScroll}
 			data-testid={props['data-testid'] ?? 'page'}
+			id={PAGE_ID}
 		>
 			{children}
 			{onScrollEnd ? (

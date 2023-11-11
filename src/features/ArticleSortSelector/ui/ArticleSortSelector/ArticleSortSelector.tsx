@@ -1,10 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Select, SelectOptions } from '@/shared/ui/deprecated/Select';
+import {
+	Select as SelectDeprecated,
+	SelectOptions,
+} from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types/sort';
-import { HStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleSortField } from '@/entities/Article';
+import { ToggleFeature } from '@/shared/lib/features';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleSortSelectorProps {
 	className?: string;
@@ -49,23 +55,45 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 	);
 
 	return (
-		<HStack
-			gap="8"
-			align="center"
-			className={classNames('', {}, [className])}
-		>
-			<Select
-				label={t('Сортировать по')}
-				options={sortFieldOptions}
-				value={sort}
-				onChange={onChangeSort}
-			/>
-			<Select
-				label={t('по')}
-				options={orderOptions}
-				value={order}
-				onChange={onChangeOrder}
-			/>
-		</HStack>
+		<ToggleFeature
+			feature="isAppRedesigned"
+			on={
+				<div className={classNames('', {}, [className])}>
+					<VStack gap="8">
+						<Text text={t('Сортировать по:')} />
+						<ListBox
+							options={sortFieldOptions}
+							value={sort}
+							onChange={onChangeSort}
+						/>
+						<ListBox
+							options={orderOptions}
+							value={order}
+							onChange={onChangeOrder}
+						/>
+					</VStack>
+				</div>
+			}
+			off={
+				<HStack
+					gap="8"
+					align="center"
+					className={classNames('', {}, [className])}
+				>
+					<SelectDeprecated
+						label={t('Сортировать по')}
+						options={sortFieldOptions}
+						value={sort}
+						onChange={onChangeSort}
+					/>
+					<SelectDeprecated
+						label={t('по')}
+						options={orderOptions}
+						value={order}
+						onChange={onChangeOrder}
+					/>
+				</HStack>
+			}
+		/>
 	);
 });

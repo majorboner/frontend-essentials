@@ -1,7 +1,3 @@
-.Card {
-	border-radius: 12px;
-}
-
 .withoutPaddings {
 	padding: 0;
 }
@@ -16,6 +12,14 @@
 
 .outlined {
 	border: 1px solid var(--accent-redesigned);
+}
+
+.square {
+	border-radius: 12px;
+}
+
+.round {
+	border-radius: 40px;
 }
 
 .max {
