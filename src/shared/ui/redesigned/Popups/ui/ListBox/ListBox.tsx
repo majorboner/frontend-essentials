@@ -7,6 +7,8 @@ import cls from './ListBox.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import { Button } from '../../../Button';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '../../../Icon';
 
 export interface ListBoxOptions<T extends string> {
 	value: T;
@@ -34,6 +36,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 		value,
 		readonly,
 		defaultValue,
+
 		direction = 'bottom right',
 	} = props;
 	const listBoxClasses = [mapDirectionClass[direction], popupCls.menu];
@@ -61,6 +64,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 						<Button
 							variant="filled"
 							disabled={readonly}
+							addonRight={<Icon Svg={ArrowIcon} />}
 						>
 							{selectedItem?.content ?? defaultValue}
 						</Button>
