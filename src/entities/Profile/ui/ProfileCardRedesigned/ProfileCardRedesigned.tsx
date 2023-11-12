@@ -44,7 +44,10 @@ export const ProfileCardRedesignedSkeleton = () => (
 				gap="32"
 				max
 			>
-				<VStack gap="16">
+				<VStack
+					gap="16"
+					max
+				>
 					<Skeleton
 						width="100%"
 						height={38}
@@ -62,7 +65,10 @@ export const ProfileCardRedesignedSkeleton = () => (
 						height={38}
 					/>
 				</VStack>
-				<VStack gap="16">
+				<VStack
+					gap="16"
+					max
+				>
 					<Skeleton
 						width="100%"
 						height={38}

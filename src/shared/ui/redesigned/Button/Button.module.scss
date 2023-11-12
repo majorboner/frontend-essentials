@@ -3,6 +3,7 @@
 	color: var(--text-redesigned);
 	display: flex;
 	align-items: center;
+	padding: 4px 8px;
 
 	&:hover {
 		color: var(--accent-redesigned);
@@ -44,8 +45,13 @@
 }
 
 .outline {
-	border: 1px solid var(--primary-color);
-	border-radius: var(--font-line-m);
+	background: none;
+	border: 1px solid var(--icon-redesigned);
+	border-radius: 34px;
+
+	&:hover {
+		border: 1px solid var(--accent-redesigned);
+	}
 }
 
 .square.size-m {

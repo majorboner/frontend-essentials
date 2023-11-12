@@ -37,7 +37,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 	const { className } = props;
 	const formData = useSelector(getProfileForm);
 	const error = useSelector(getProfileError);
-	const isLoading = useSelector(getProfileIsLoading);
+	// const isLoading = useSelector(getProfileIsLoading);
+	const isLoading = true;
 	const readonly = useSelector(getProfileReadonly);
 	const { id } = useParams<{ id: string }>();
 	const dispatch = useAppDispatch();
