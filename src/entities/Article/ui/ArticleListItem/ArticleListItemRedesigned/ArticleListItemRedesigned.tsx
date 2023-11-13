@@ -1,41 +1,48 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItemRedesigned.module.scss';
 import { ArticleListItemProps } from '../ArticleListItem';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import {
-	ArticleBlockType,
-	ArticleView,
-} from '../../../model/consts/articleConsts';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { ArticleTextBlock } from '../../../model/types/article';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { ArticleTextBlock } from '../../../model/types/article';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { getRouteArticleDetail } from '@/shared/const/router';
-import EyeLogo from '@/shared/assets/icons/eye-new.svg';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import {
+	ArticleBlockType,
+	ArticleView,
+} from '../../../model/consts/articleConsts';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
-	const { t } = useTranslation();
 	const { className, article, view, target } = props;
-	const types = (
-		<Text
-			text={article.type.join(', ')}
-			className={cls.types}
-		/>
+	const { t } = useTranslation();
+
+	const userInfo = (
+		<>
+			<Avatar
+				size={32}
+				src={article.user.avatar}
+			/>
+			<Text
+				bold
+				text={article.user.username}
+			/>
+		</>
 	);
 	const views = (
-		<HStack>
+		<HStack gap="8">
+			<Icon Svg={EyeIcon} />
 			<Text
 				text={String(article.views)}
 				className={cls.views}
 			/>
-			<Icon Svg={EyeLogo} />
 		</HStack>
 	);
 
@@ -43,46 +50,48 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 		const textBlock = article.blocks.find(
 			(block) => block.type === ArticleBlockType.TEXT,
 		) as ArticleTextBlock;
+
 		return (
 			<Card
-				className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+				padding="24"
+				max
 				data-testid="ArticleListItem"
+				className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
 			>
 				<VStack
 					max
-					gap="8"
+					gap="16"
 				>
-					<HStack className={cls.header}>
-						<Avatar
-							src={article.user.avatar}
-							size={32}
-						/>
-						<Text
-							text={article.user.username}
-							bold
-						/>
+					<HStack
+						gap="8"
+						max
+					>
+						{userInfo}
 						<Text text={article.createdAt} />
 					</HStack>
-					<Text title={article.title} />
+					<Text
+						title={article.title}
+						bold
+					/>
 					<Text
 						title={article.subtitle}
 						size="size-s"
 					/>
 					<AppImage
-						src={article.img}
-						alt={article.title}
-						className={cls.img}
 						fallback={
 							<Skeleton
-								width={200}
-								height={200}
+								width="100%"
+								height={250}
 							/>
 						}
+						src={article.img}
+						className={cls.img}
+						alt={article.title}
 					/>
 					{textBlock?.paragraphs && (
 						<Text
+							className={cls.textBlock}
 							text={textBlock.paragraphs.slice(0, 2).join(' ')}
-							className={cls.text}
 						/>
 					)}
 					<HStack
@@ -90,9 +99,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 						justify="between"
 					>
 						<AppLink
-							to={getRouteArticleDetail(article.id)}
-							variant="primary"
 							target={target}
+							to={getRouteArticleDetail(article.id)}
 						>
 							<Button variant="outline">{t('Читать далее...')}</Button>
 						</AppLink>
@@ -102,44 +110,56 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 			</Card>
 		);
 	}
+
 	return (
-		<div
-			className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+		<AppLink
 			data-testid="ArticleListItem"
+			target={target}
+			to={getRouteArticleDetail(article.id)}
+			className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
 		>
-			<AppLink
-				target={target}
-				to={getRouteArticleDetail(article.id)}
-				variant="primary"
+			<Card
+				className={cls.card}
+				border="round"
 			>
-				<Card className={cls.card}>
-					<div className={cls.imageWrapper}>
-						<AppImage
-							src={article.img}
-							alt="s"
-							className={cls.img}
-							fallback={
-								<Skeleton
-									width="100%"
-									height={250}
-								/>
-							}
+				<AppImage
+					fallback={
+						<Skeleton
+							width={200}
+							height={200}
 						/>
-						<Text
-							text={article.createdAt}
-							className={cls.date}
-						/>
-					</div>
-					<div className={cls.infoWrapper}>
-						{types}
-						{views}
-					</div>
+					}
+					alt={article.title}
+					src={article.img}
+					className={cls.img}
+				/>
+				<VStack
+					className={cls.info}
+					gap="4"
+				>
 					<Text
-						text={article.title}
+						title={article.title}
 						className={cls.title}
 					/>
-				</Card>
-			</AppLink>
-		</div>
+					<VStack
+						gap="4"
+						className={cls.footer}
+						max
+					>
+						<HStack
+							justify="between"
+							max
+						>
+							<Text
+								text={article.createdAt}
+								className={cls.date}
+							/>
+							{views}
+						</HStack>
+						<HStack gap="4">{userInfo}</HStack>
+					</VStack>
+				</VStack>
+			</Card>
+		</AppLink>
 	);
 });
