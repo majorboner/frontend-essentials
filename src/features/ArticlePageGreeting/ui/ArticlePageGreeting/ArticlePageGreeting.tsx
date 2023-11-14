@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlePageGreeting.module.scss';
-import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';

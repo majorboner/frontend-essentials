@@ -9,7 +9,6 @@
 }
 
 .content {
-	background-color: var(--bg-color);
 	border-radius: 24px;
 	padding: 2rem;
 	max-width: 60%;
@@ -27,6 +26,19 @@
 		transform: scale(100%);
 	}
 }
+
+.modalNew {
+	.content {
+		background: var(--light-bg-redesigned);
+	}
+}
+
+.modalOld {
+	.content {
+		background: var(--bg-color);
+	}
+}
+
 
 .isClosing {
 	.content {
