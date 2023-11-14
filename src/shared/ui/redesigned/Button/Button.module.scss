@@ -39,19 +39,41 @@
 }
 
 .filled {
-	background: var(--light-bg-redesigned);
 	border: none;
 	outline: none;
 	border-radius: 34px;
+
+	&.normal {
+		background: var(--light-bg-redesigned);
+	}
+
+	&.error {
+		background: var(--cancel-redesigned);
+	}
+
+	&.success {
+		background: var(--save-redesigned);
+	}
 }
 
 .outline {
 	background: none;
-	border: 1px solid var(--icon-redesigned);
 	border-radius: 34px;
 
 	&:hover {
 		border: 1px solid var(--accent-redesigned);
+	}
+
+	&.normal {
+		border: 1px solid var(--icon-redesigned);
+	}
+
+	&.error {
+		border: 1px solid var(--cancel-redesigned);	
+	}
+
+	&.success {
+		border: 1px solid var(--save-redesigned);
 	}
 }
 

@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
+import {
+	Button as ButtonDeprecated,
+	ThemeButton,
+} from '@/shared/ui/deprecated/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
@@ -13,6 +16,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeature } from '@/shared/lib/features';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarProps {
 	className?: string;
@@ -69,13 +73,13 @@ const Navbar = ({ className }: NavbarProps) => {
 
 	const NavbarDeprecated = (
 		<header className={classNames(cls.NavBar, {}, [className])}>
-			<Button
+			<ButtonDeprecated
 				onClick={onShowModal}
 				className={cls.links}
 				theme={ThemeButton.CLEAR}
 			>
 				{t('Войти')}
-			</Button>
+			</ButtonDeprecated>
 			{isAuthOpen && (
 				<LoginModal
 					isOpen={isAuthOpen}
@@ -90,7 +94,7 @@ const Navbar = ({ className }: NavbarProps) => {
 			<Button
 				onClick={onShowModal}
 				className={cls.links}
-				theme={ThemeButton.CLEAR}
+				variant="clear"
 			>
 				{t('Войти')}
 			</Button>
