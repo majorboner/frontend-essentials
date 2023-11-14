@@ -92,7 +92,7 @@ export const ProfileCardRedesignedSkeleton = () => (
 );
 
 export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
-	const { t } = useTranslation();
+	const { t } = useTranslation('profile');
 	const {
 		data,
 		readonly,

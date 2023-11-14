@@ -2,10 +2,11 @@
 	"Поиск": "Search",
 	"возрастанию": "Ascendant",
 	"убыванию": "Descendant",
-	"дате создания": "date",
-	"названию": "name",
-	"просмотрам": "views",
+	"дате создания": "Date",
+	"названию": "Name",
+	"просмотрам": "Views",
 	"Сортировать по": "sort by",
+	"Сортировать по:": "Sort by:",
 	"по": "by",
 	"Все": "All",
 	"Айти": "IT",
@@ -18,5 +19,8 @@
 	"Назад к списку": "Back to articles",
 	"Редактировать": "Edit",
 	"Рекомендации": "Recommendations",
-	"Создание статьи": "New article"
+	"Создание статьи": "New article",
+	"{{count}} просмотров_zero": "{{count}} views",
+	"{{count}} просмотров_one": "{{count}} view",
+	"{{count}} просмотров_other": "{{count}} views"
 }

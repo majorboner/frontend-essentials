@@ -17,6 +17,9 @@ import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleD
 import { ArticleRating } from '@/features/ArticleRating';
 import { ToggleFeature } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
+import { StickyContentLayout } from '@/shared/layouts';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailPageProps {
 	className?: string;
@@ -36,22 +39,47 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
-				<VStack
-					max
-					gap="16"
-				>
-					<ArticleDetailsPageHeader />
-					<ArticleDetails id={id} />
-					<ToggleFeature
-						feature="isArticleRatingEnabled"
-						on={<ArticleRating articleId={id} />}
-						off={<Card>{t('Оценка статей скоро появится')}</Card>}
+			<ToggleFeature
+				feature="isAppRedesigned"
+				on={
+					<StickyContentLayout
+						content={
+							<Page
+								className={classNames(cls.ArticleDetailPage, {}, [className])}
+							>
+								<VStack
+									max
+									gap="16"
+								>
+									<DetailsContainer />
+									<ArticleRating articleId={id} />
+									<ArticleRecommendationsList />
+									<ArticleDetailPageComments id={id} />
+								</VStack>
+							</Page>
+						}
+						right={<AdditionalInfoContainer />}
 					/>
-					<ArticleRecommendationsList />
-					<ArticleDetailPageComments id={id} />
-				</VStack>
-			</Page>
+				}
+				off={
+					<Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
+						<VStack
+							max
+							gap="16"
+						>
+							<ArticleDetailsPageHeader />
+							<ArticleDetails id={id} />
+							<ToggleFeature
+								feature="isArticleRatingEnabled"
+								on={<ArticleRating articleId={id} />}
+								off={<Card>{t('Оценка статей скоро появится')}</Card>}
+							/>
+							<ArticleRecommendationsList />
+							<ArticleDetailPageComments id={id} />
+						</VStack>
+					</Page>
+				}
+			/>
 		</DynamicModuleLoader>
 	);
 };
