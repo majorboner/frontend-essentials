@@ -1,12 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import { Counter } from '@/entities/Counter';
-import { ArticleRating } from '@/features/ArticleRating';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 
-const MainPage = () => (
-	<Page data-testid="MainPage">
-		<Counter />
-		<ArticleRating articleId="7" />
-	</Page>
-);
+const MainPage = () => {
+	const { t } = useTranslation('main');
+	return (
+		<Page data-testid="MainPage">
+			<Text title={t('Главная страница')} />
+			<Counter />
+		</Page>
+	);
+};
 
 export default MainPage;
