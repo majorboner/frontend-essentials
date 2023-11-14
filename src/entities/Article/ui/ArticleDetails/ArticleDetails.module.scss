@@ -1,27 +1,12 @@
 .ArticleDetails {
-	min-height: 100vh;
+	min-height: 100%;
 }
 
 .avatar {
 	margin: 0 auto;
 }
 
-.title {
-	margin: 15px auto;
-}
-
-.skeleton {
-	margin-top: 15px;
-}
-
-.articleInfo {
-	display: flex;
-}
-
-.icon {
-	margin-right: 10px;
-}
-
-.block {
-	margin-top: 16px;
+.img {
+	width: 100%;
+	max-height: 420px;
 }

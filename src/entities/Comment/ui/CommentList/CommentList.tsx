@@ -1,9 +1,12 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Comment } from '../../model/types/comment';
-import cls from './CommentList.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { ToggleFeature } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 
 interface CommentListProps {
 	className?: string;
@@ -13,7 +16,7 @@ interface CommentListProps {
 
 export const CommentList = memo((props: CommentListProps) => {
 	const { className, comments, isLoading } = props;
-
+	const { t } = useTranslation('profile');
 	if (isLoading) {
 		return (
 			<VStack
@@ -29,18 +32,25 @@ export const CommentList = memo((props: CommentListProps) => {
 
 	return (
 		<VStack
+			gap="16"
 			max
 			className={classNames('', {}, [className])}
 		>
-			{comments?.map((comment) => (
-				<CommentCard
-					key={comment.id}
-					isLoading={isLoading}
-					className={cls.comment}
-					comment={comment}
-					data-testid="CommentList"
+			{comments?.length ? (
+				comments.map((comment) => (
+					<CommentCard
+						isLoading={isLoading}
+						comment={comment}
+						key={comment.id}
+					/>
+				))
+			) : (
+				<ToggleFeature
+					feature="isAppRedesigned"
+					on={<Text text={t('Комментарии отсутствуют')} />}
+					off={<TextDeprecated text={t('Комментарии отсутствуют')} />}
 				/>
-			))}
+			)}
 		</VStack>
 	);
 });

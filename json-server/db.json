@@ -551,7 +551,20 @@
       ]
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "dfs",
+      "id": 1
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123",
+      "id": 2
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -565,7 +578,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app-dark-theme",
+        "theme": "app-leaf-theme",
         "isFirstVisit": false,
         "settingsPageHasBeenOpened": false
       },

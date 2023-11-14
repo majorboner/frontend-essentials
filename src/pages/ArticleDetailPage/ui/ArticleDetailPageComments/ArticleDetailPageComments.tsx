@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Suspense, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -12,6 +12,8 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { ToggleFeature } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleDetailPageCommentsProps {
 	id?: string;
@@ -41,7 +43,22 @@ export const ArticleDetailPageComments = memo(
 				gap="16"
 				max
 			>
-				<Text
+				<ToggleFeature
+					feature="isAppRedesigned"
+					on={
+						<Text
+							size="size-l"
+							title={t('Комментарии')}
+						/>
+					}
+					off={
+						<TextDeprecated
+							size={TextSize.L}
+							title={t('Комментарии')}
+						/>
+					}
+				/>
+				<TextDeprecated
 					size={TextSize.L}
 					title={t('Комментарии')}
 				/>

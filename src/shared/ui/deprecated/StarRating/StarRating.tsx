@@ -2,7 +2,9 @@ import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import StarIcon from '@/shared/assets/icons/star.svg';
 import cls from './StarRating.module.scss';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../../redesigned/Icon';
+import { Icon as IconDeprecated } from '../Icon';
+import { ToggleFeature, toggleFeatures } from '@/shared/lib/features';
 
 interface StarRatingProps {
 	className?: string;
@@ -45,22 +47,45 @@ export const StarRating = memo((props: StarRatingProps) => {
 	};
 
 	return (
-		<div className={classNames(cls.StarRating, {}, [className])}>
-			{stars.map((starNumber) => (
-				<Icon
-					key={starNumber}
-					Svg={StarIcon}
-					height={size}
-					width={size}
-					className={classNames(cls.starIcon, { [cls.selected]: isSelected }, [
+		<div
+			className={classNames(
+				toggleFeatures({
+					name: 'isAppRedesigned',
+					on: () => cls.StarRatingRedesigned,
+					off: () => cls.StarRating,
+				}),
+				{},
+				[className],
+			)}
+		>
+			{stars.map((starNumber) => {
+				const props = {
+					key: starNumber,
+					Svg: StarIcon,
+					height: size,
+					width: size,
+					className: classNames(cls.starIcon, { [cls.selected]: isSelected }, [
 						currentStarsCount >= starNumber ? cls.hovered : cls.normal,
-					])}
-					onMouseEnter={onHover(starNumber)}
-					onMouseLeave={onLeave}
-					onClick={onClick(starNumber)}
-					data-testid={`StarRating.${starNumber}`}
-				/>
-			))}
+					]),
+					onMouseEnter: onHover(starNumber),
+					onMouseLeave: onLeave,
+					onClick: onClick(starNumber),
+					'data-testid': `StarRating.${starNumber}`,
+					'data-selected': currentStarsCount >= starNumber,
+				};
+				return (
+					<ToggleFeature
+						feature="isArticleRatingEnabled"
+						on={
+							<Icon
+								clickable={!isSelected}
+								{...props}
+							/>
+						}
+						off={<IconDeprecated {...props} />}
+					/>
+				);
+			})}
 		</div>
 	);
 });
