@@ -562,8 +562,6 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isCounterEnabled": false,
         "isAppRedesigned": true
       },
       "jsonSettings": {
