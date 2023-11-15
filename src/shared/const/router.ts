@@ -24,3 +24,16 @@ export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteProfile = (id: string) => `/profile/${id}`;
 export const getRouteArticleDetail = (id: string) => `/articles/${id}`;
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
+
+export const AppRouteByPathPattern: Record<string, AppRoutes> = {
+	[getRouteMain()]: AppRoutes.MAIN,
+	[getRouteAbout()]: AppRoutes.ABOUT,
+	[getRouteSettings()]: AppRoutes.SETTINGS,
+	[getRouteAdmin()]: AppRoutes.ADMIN,
+	[getRouteArticles()]: AppRoutes.ARTICLES,
+	[getRouteForbidden()]: AppRoutes.FORBIDDEN,
+	[getRouteArticleCreate()]: AppRoutes.ARTICLE_CREATE,
+	[getRouteProfile(':id')]: AppRoutes.PROFILE,
+	[getRouteArticleDetail(':id')]: AppRoutes.ARTICLE_DETAIL,
+	[getRouteArticleEdit(':id')]: AppRoutes.ARTICLE_EDIT,
+};

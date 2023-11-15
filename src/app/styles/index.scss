@@ -28,13 +28,13 @@
 }
 
 *::-webkit-scrollbar-track {
-	background: var(--card-bg);
+	background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: var(--inverted-primary-color);
+	background-color: var(--icon-redesigned);
 	border-radius: 20px;
-	border: 3px solid var(--primary-color);
+	border: 3px solid var(--accent-redesigned);
 }
 
 .app *::-webkit-scrollbar {
@@ -43,11 +43,11 @@
 }
 
 .app *::-webkit-scrollbar-track {
-	background: var(--light-bg-redesigned);
+	background: var(--card-bg);
 }
 
 .app *::-webkit-scrollbar-thumb {
-	background-color: var(--icon-redesigned);
+	background-color: var(--inverted-primary-color);
 	border-radius: 20px;
-	border: 3px solid var(--accent-redesigned);
+	border: 3px solid var(--primary-color);
 }
