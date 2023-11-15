@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useMemo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/deprecated/Button';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -8,7 +7,7 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeature } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
@@ -21,11 +20,22 @@ interface SidebarProps {
 export const Sidebar = ({ className }: SidebarProps) => {
 	const { t } = useTranslation();
 	const [collapsed, setCollapsed] = useState(false);
-	const sidebarItemsList = useSelector(getSidebarItems);
+	const sidebarItemsList = useSidebarItems();
 	const onToggle = () => {
 		setCollapsed((collapsed) => !collapsed);
 	};
 
+	const itemsList = useMemo(
+		() =>
+			sidebarItemsList.map((item) => (
+				<SidebarItem
+					item={item}
+					collapsed={collapsed}
+					key={item.path}
+				/>
+			)),
+		[collapsed, sidebarItemsList],
+	);
 	const SidebarDeprecated = (
 		<aside
 			data-testid="sidebar"
@@ -37,13 +47,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 				gap="8"
 				className={cls.items}
 			>
-				{sidebarItemsList.map((item) => (
-					<SidebarItem
-						item={item}
-						collapsed={collapsed}
-						key={item.path}
-					/>
-				))}
+				{itemsList}
 			</VStack>
 			<Button
 				data-testid="sidebar-switcher"
@@ -83,16 +87,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
 				size={collapsed ? 30 : 50}
 			/>
 			<VStack
+				role="navigation"
 				gap="8"
 				className={cls.items}
 			>
-				{sidebarItemsList.map((item) => (
-					<SidebarItem
-						item={item}
-						collapsed={collapsed}
-						key={item.path}
-					/>
-				))}
+				{itemsList}
 			</VStack>
 			<Icon
 				Svg={ArrowIcon}

@@ -1,6 +1,5 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { t } from 'i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
@@ -18,8 +17,10 @@ const App = () => {
 	const inited = useSelector(getUserInited);
 
 	useEffect(() => {
-		dispatch(initAuthData());
-	}, [dispatch]);
+		if (!inited) {
+			dispatch(initAuthData());
+		}
+	}, [dispatch, inited]);
 
 	if (!inited) {
 		return <PageLoader />;
@@ -52,7 +53,6 @@ const App = () => {
 							header={<Navbar />}
 							content={<AppRouter />}
 							sidebar={<Sidebar />}
-							toolbar={<div>{t('')}</div>}
 						/>
 					</Suspense>
 				</div>

@@ -9,6 +9,7 @@ import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 interface DesignSwitcherProps {
 	className?: string;
@@ -21,6 +22,7 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
 	const userData = useSelector(getUserAuthData);
 	const isAppRedesigned = getFeatureFlag('isAppRedesigned');
 	const [isLoading, setIsLoading] = useState(false);
+	const forceUpdate = useForceUpdate();
 	const items = [
 		{ content: t('Новый'), value: 'new' },
 		{ content: t('Старый'), value: 'old' },
@@ -37,6 +39,7 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
 				}),
 			);
 			setIsLoading(false);
+			forceUpdate();
 		}
 	};
 	return (
