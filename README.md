@@ -1,12 +1,16 @@
+
+# Frontend essentials training
+
+Учебный проект 
+
 ## Запуск проекта
 
-```
-`npm install` - устанавливаем зависимости
-`npm run start:dev` или `npm run start:dev:vite` - запуск сервера + frontend проекта в dev режиме
-```
+Для запуска проекта выполните следующие шаги:
+
+- Установите зависимости с помощью команды `npm install`
+- Запустите сервер и фронтенд проекта с помощью команды `npm run start:dev` или `npm run start:dev:vite`
 
 ---
-
 ## Скрипты
 
 - `npm run start` - Запуск frontend проекта на webpack dev server
@@ -24,7 +28,6 @@
 - `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
 - `npm run test:e2e` - Запуск тестовой среды Cypress
-
 - `npm run prepare` - прекоммит хуки husky
 - `npm run storybook` - запуск Storybook
 - `npm run build-storybook` - Сборка storybook билда
@@ -35,7 +38,7 @@
 
 ## Архитектура проекта
 
-Проект написан в соответствии с методологией [Feature Sliced Design](https://feature-sliced.design/)
+Проект написан разработан с использованием методологии [Feature Sliced Design](https://feature-sliced.design/)
 
 ---
 
@@ -57,6 +60,7 @@
 1. Обычные unit тесты на jest - `npm run test:unit`
 2. Тесты на компоненты с React testing library -`npm run test:unit`
 3. Скриншотное тестирование с loki `npm run test:ui`
+4. e2e тесты на cypress - `npm run test:e2e`
 
 Подробнее о тестах - [документация тестирование](/docs/tests.md)
 
@@ -64,7 +68,7 @@
 
 ## Линтинг
 
-В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
+В проекте используется prettiere для форматирования, eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
 используется собственный eslint plugin _eslint-plugin-feature-sliced-imports_,
@@ -140,6 +144,8 @@ on: функция, которая отработает после Включе�
 of: функция, которая отработает после ВЫключения фичи
 }
 
+Для компонентов написана jsx-обертка ToggleFeatures которая по условию возвращает переданные компоненты
+
 Для автоматического удаления фичи использовать скрипт remove-feature.ts,
 который принимает 2 аргумента
 
@@ -159,30 +165,3 @@ of: функция, которая отработает после ВЫключ�
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 
 ---
-
-## Сущности (entities)
-
-- [Article](/src/entities/Article)
-- [Comment](/src/entities/Comment)
-- [Counter](/src/entities/Counter)
-- [Country](/src/entities/Country)
-- [Currency](/src/entities/Currency)
-- [Notification](/src/entities/Notification)
-- [Profile](/src/entities/Profile)
-- [Rating](/src/entities/Rating)
-- [User](/src/entities/User)
-
-## Фичи (features)
-
-- [addCommentForm](/src/features/addCommentForm)
-- [articleEditForm](/src/features/articleEditForm)
-- [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
-- [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/avatarDropdown)
-- [editableProfileCard](/src/features/editableProfileCard)
-- [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/notificationButton)
-- [profileRating](/src/features/profileRating)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [scrollRestoration](/src/features/scrollRestoration)
