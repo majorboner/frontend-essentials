@@ -5,7 +5,7 @@ import { Text } from './Text';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Text> = {
-	title: 'shared/Text',
+	title: 'shared/redesigned/Text',
 	component: Text,
 };
 
@@ -88,6 +88,51 @@ export const ErrorDark: Story = {
 	],
 };
 export const ErrorLeaf: Story = {
+	args: {
+		align: 'left',
+		title: 'Sample Title',
+		text: 'Sample Text',
+		variant: 'error',
+	},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
+};
+export const AccentLight: Story = {
+	args: {
+		align: 'left',
+		title: 'Sample Title',
+		text: 'Sample Text',
+		variant: 'error',
+	},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
+};
+export const AccentDark: Story = {
+	args: {
+		align: 'left',
+		title: 'Sample Title',
+		text: 'Sample Text',
+		variant: 'error',
+	},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
+};
+export const AccentLeaf: Story = {
 	args: {
 		align: 'left',
 		title: 'Sample Title',

@@ -4,13 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import testAvatar from '@/shared/assets/tests/test.jpg';
 import { DropDownItem, Dropdown } from './Dropdown';
 import { Avatar } from '../../../Avatar';
 
 const meta: Meta<typeof Dropdown> = {
-	title: 'shared/Dropdown',
+	title: 'shared/deprecated/Dropdown',
 	component: Dropdown,
 	decorators: [
 		(Story) => (
@@ -51,11 +50,9 @@ export const Light: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -68,11 +65,9 @@ export const Dark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.DARK}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -85,11 +80,9 @@ export const Leaf: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LEAF}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };

@@ -7,7 +7,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Popover } from './Popover';
 
 const meta: Meta<typeof Popover> = {
-	title: 'shared/Popover',
+	title: 'shared/deprecated/Popover',
 	component: Popover,
 	decorators: [
 		(Story) => (

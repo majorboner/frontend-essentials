@@ -1,8 +1,8 @@
 ## Запуск проекта
 
 ```
-npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
+`npm install` - устанавливаем зависимости
+`npm run start:dev` или `npm run start:dev:vite` - запуск сервера + frontend проекта в dev режиме
 ```
 
 ---
@@ -20,13 +20,16 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run prepare` - прекоммит хуки
+- `npm run test:e2e` - Запуск тестовой среды Cypress
+
+- `npm run prepare` - прекоммит хуки husky
 - `npm run storybook` - запуск Storybook
 - `npm run build-storybook` - Сборка storybook билда
 - `npm run generate:slice` - Скрипт для генерации FSD слайсов
+- `npm run remove:feature` - Скрипт для удаления устаревших фич
 
 ---
 

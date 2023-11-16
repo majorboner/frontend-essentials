@@ -1,21 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BrowserRouter } from 'react-router-dom';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Skeleton } from './Skeleton';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Skeleton> = {
-	title: 'shared/Skeleton',
+	title: 'shared/deprecated/Skeleton',
 	component: Skeleton,
-	decorators: [
-		(Story) => (
-			<BrowserRouter>
-				<Story />
-			</BrowserRouter>
-		),
-	],
 };
 
 export default meta;
@@ -25,11 +16,9 @@ export const Light: Story = {
 	args: {},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -38,11 +27,9 @@ export const Dark: Story = {
 	args: {},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.DARK}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -51,11 +38,9 @@ export const Leaf: Story = {
 	args: {},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LEAF}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };

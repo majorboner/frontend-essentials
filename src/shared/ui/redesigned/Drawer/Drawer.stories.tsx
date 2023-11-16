@@ -7,7 +7,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Drawer } from './Drawer';
 
 const meta: Meta<typeof Drawer> = {
-	title: 'shared/Drawer',
+	title: 'shared/redesigned/Drawer',
 	component: Drawer,
 	decorators: [
 		(Story) => (

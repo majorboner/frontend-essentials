@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { AppLink } from './AppLink';
 
 const meta: Meta<typeof AppLink> = {
-	title: 'shared/AppLink',
+	title: 'shared/redesigned/AppLink',
 	component: AppLink,
 	decorators: [
 		(Story) => (
@@ -30,7 +30,10 @@ export const PrimaryLight: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.LIGHT}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.LIGHT}
+			>
 				<Story />
 			</ThemeDecorator>
 		),
@@ -43,59 +46,74 @@ export const PrimaryDark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.DARK}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.DARK}
+			>
 				<Story />
 			</ThemeDecorator>
 		),
 	],
 };
 
-export const PrimaryLeaf: Story = {
+export const PrimaryOrange: Story = {
 	args: {
 		variant: 'primary',
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.LEAF}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.LEAF}
+			>
 				<Story />
 			</ThemeDecorator>
 		),
 	],
 };
 
-export const SecondaryLight: Story = {
+export const ErrorLight: Story = {
 	args: {
 		variant: 'red',
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.LIGHT}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.LIGHT}
+			>
 				<Story />
 			</ThemeDecorator>
 		),
 	],
 };
 
-export const SecondaryDark: Story = {
+export const ErrorDark: Story = {
 	args: {
 		variant: 'red',
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.DARK}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.DARK}
+			>
 				<Story />
 			</ThemeDecorator>
 		),
 	],
 };
 
-export const SecondaryLeaf: Story = {
+export const ErrorLeaf: Story = {
 	args: {
 		variant: 'red',
 	},
 	decorators: [
 		(Story) => (
-			<ThemeDecorator theme={Theme.LEAF}>
+			<ThemeDecorator
+				redesigned
+				theme={Theme.LEAF}
+			>
 				<Story />
 			</ThemeDecorator>
 		),

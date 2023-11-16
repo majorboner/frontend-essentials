@@ -1,5 +1,5 @@
 import { Listbox } from '@headlessui/react';
-import { ReactNode, useMemo } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDirection } from '@/shared/types/ui';
 import { HStack } from '../../../../redesigned/Stack';
@@ -56,18 +56,14 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 			>
 				<div className={cls.relativeWrapper}>
 					<Listbox.Button
-						as="button"
+						as={Button}
+						variant="filled"
+						addonRight={<Icon Svg={ArrowIcon} />}
 						className={classNames(cls.button, { [cls.readonly]: readonly }, [
 							className,
 						])}
 					>
-						<Button
-							variant="filled"
-							disabled={readonly}
-							addonRight={<Icon Svg={ArrowIcon} />}
-						>
-							{selectedItem?.content ?? defaultValue}
-						</Button>
+						{selectedItem?.content ?? defaultValue}
 					</Listbox.Button>
 					<Listbox.Options
 						className={classNames(cls.options, {}, listBoxClasses)}
@@ -77,6 +73,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 								key={option.value}
 								value={option.value}
 								disabled={option.disabled}
+								as={Fragment}
 							>
 								{({ active, selected }) => (
 									<li

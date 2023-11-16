@@ -3,11 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ListBox, ListBoxOptions } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-	title: 'shared/ListBox',
+	title: 'shared/deprecated/ListBox',
 	component: ListBox,
 	decorators: [
 		(Story) => (
@@ -62,11 +61,9 @@ export const Light: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
 				<ThemeDecorator theme={Theme.LIGHT}>
 					<Story />
 				</ThemeDecorator>
-			</StoreProvider>
 		),
 	],
 };
@@ -79,11 +76,9 @@ export const Dark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
 				<ThemeDecorator theme={Theme.DARK}>
 					<Story />
 				</ThemeDecorator>
-			</StoreProvider>
 		),
 	],
 };
@@ -96,11 +91,9 @@ export const Leaf: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
 				<ThemeDecorator theme={Theme.LEAF}>
 					<Story />
 				</ThemeDecorator>
-			</StoreProvider>
 		),
 	],
 };
@@ -114,11 +107,9 @@ export const Readonly: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
 				<ThemeDecorator theme={Theme.LIGHT}>
 					<Story />
 				</ThemeDecorator>
-			</StoreProvider>
 		),
 	],
 };

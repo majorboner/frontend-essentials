@@ -22,7 +22,7 @@ import {
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 	const { className, article, view, target } = props;
-	const { t } = useTranslation();
+	const { t } = useTranslation('articles');
 
 	const userInfo = (
 		<>
@@ -55,6 +55,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 			<Card
 				padding="24"
 				max
+				border="round"
 				data-testid="ArticleListItem"
 				className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
 			>

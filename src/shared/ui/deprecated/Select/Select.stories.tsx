@@ -6,7 +6,7 @@ import { Select, SelectOptions } from './Select';
 
 const meta: Meta<typeof Select> = {
 	component: Select,
-	title: 'shared/Select',
+	title: 'shared/deprecated/Select',
 };
 
 export default meta;

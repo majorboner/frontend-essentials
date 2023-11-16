@@ -1,22 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Card, CardTheme } from './Card';
 import { Text } from '../Text/Text';
 
 const meta: Meta<typeof Card> = {
-	title: 'shared/Card',
+	title: 'shared/deprecated/Card',
 	component: Card,
-	decorators: [
-		(Story) => (
-			<BrowserRouter>
-				<Story />
-			</BrowserRouter>
-		),
-	],
 };
 
 export default meta;
@@ -33,11 +24,9 @@ export const Empty: Story = {
 	args: {},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -48,11 +37,9 @@ export const Light: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -63,11 +50,9 @@ export const Dark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.DARK}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -78,11 +63,9 @@ export const Leaf: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LEAF}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -93,11 +76,9 @@ export const OutlineLight: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -108,11 +89,9 @@ export const OutlineDark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.DARK}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -123,11 +102,9 @@ export const OutlineLeaf: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LEAF}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };

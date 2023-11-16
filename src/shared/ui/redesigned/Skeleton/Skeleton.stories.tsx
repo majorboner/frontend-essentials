@@ -7,7 +7,7 @@ import { Skeleton } from './Skeleton';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Skeleton> = {
-	title: 'shared/Skeleton',
+	title: 'shared/redesigned/Skeleton',
 	component: Skeleton,
 	decorators: [
 		(Story) => (

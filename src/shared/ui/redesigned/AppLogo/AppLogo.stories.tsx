@@ -2,33 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Code } from './Code';
+import { AppLogo } from './AppLogo';
 
-const meta: Meta<typeof Code> = {
-	title: 'shared/deprecated/Code',
-	component: Code,
+const meta: Meta<typeof AppLogo> = {
+	title: 'shared/redesigned/AppLogo',
+	component: AppLogo,
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const text: string = `import { emptySplitApi } from './emptySplitApi'
-
-const extendedApi = emptySplitApi.injectEndpoints({
-  endpoints: (build) => ({
-    example: build.query({
-      query: () => 'test',
-    }),
-  }),
-  overrideExisting: false,
-})
-
-export const { useExampleQuery } = extendedApi`;
-
 export const Light: Story = {
-	args: {
-		text,
-	},
+	args: {},
 	decorators: [
 		(Story) => (
 			<ThemeDecorator theme={Theme.LIGHT}>
@@ -39,9 +24,7 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-	args: {
-		text,
-	},
+	args: {},
 	decorators: [
 		(Story) => (
 			<ThemeDecorator theme={Theme.DARK}>
@@ -52,9 +35,7 @@ export const Dark: Story = {
 };
 
 export const Leaf: Story = {
-	args: {
-		text,
-	},
+	args: {},
 	decorators: [
 		(Story) => (
 			<ThemeDecorator theme={Theme.LEAF}>

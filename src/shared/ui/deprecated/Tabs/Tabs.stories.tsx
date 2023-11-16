@@ -1,21 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BrowserRouter } from 'react-router-dom';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreProvider } from '@/app/providers/StoreProvider';
 import { TabItem, Tabs } from './Tabs';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Tabs> = {
-	title: 'shared/Tabs',
+	title: 'shared/deprecated/Tabs',
 	component: Tabs,
-	decorators: [
-		(Story) => (
-			<BrowserRouter>
-				<Story />
-			</BrowserRouter>
-		),
-	],
 };
 
 export default meta;
@@ -47,11 +38,9 @@ export const Light: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LIGHT}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LIGHT}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -63,11 +52,9 @@ export const Dark: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.DARK}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.DARK}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };
@@ -79,11 +66,9 @@ export const Leaf: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<StoreProvider>
-				<ThemeDecorator theme={Theme.LEAF}>
-					<Story />
-				</ThemeDecorator>
-			</StoreProvider>
+			<ThemeDecorator theme={Theme.LEAF}>
+				<Story />
+			</ThemeDecorator>
 		),
 	],
 };

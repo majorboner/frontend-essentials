@@ -6,6 +6,7 @@ import { Theme } from '@/shared/const/theme';
 interface ThemeDecoratorProps {
 	theme: Theme;
 	children: ReactNode;
+	redesigned?: boolean;
 }
 
 const ThemeDecoratorStyle = {
@@ -14,11 +15,12 @@ const ThemeDecoratorStyle = {
 };
 
 export const ThemeDecorator = (props: ThemeDecoratorProps) => {
-	const { theme, children } = props;
+	const { theme, children, redesigned = false } = props;
+	const appClassName = redesigned ? 'app_redesigned' : 'app';
 	return (
 		<ThemeProvider initialTheme={theme}>
 			<div
-				className={`app ${theme}`}
+				className={`${appClassName} ${theme}`}
 				style={ThemeDecoratorStyle}
 			>
 				{children}

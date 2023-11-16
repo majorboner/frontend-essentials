@@ -7,7 +7,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-	title: 'shared/ListBox',
+	title: 'shared/redesigned/ListBox',
 	component: ListBox,
 	decorators: [
 		(Story) => (

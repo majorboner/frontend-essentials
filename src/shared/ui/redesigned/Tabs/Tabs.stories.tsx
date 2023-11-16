@@ -7,7 +7,7 @@ import { TabItem, Tabs } from './Tabs';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Tabs> = {
-	title: 'shared/Tabs',
+	title: 'shared/redesigned/Tabs',
 	component: Tabs,
 	decorators: [
 		(Story) => (

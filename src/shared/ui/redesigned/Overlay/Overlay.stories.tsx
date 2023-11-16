@@ -7,7 +7,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Overlay } from './Overlay';
 
 const meta: Meta<typeof Overlay> = {
-	title: 'shared/Overlay',
+	title: 'shared/redesigned/Overlay',
 	component: Overlay,
 	decorators: [
 		(Story) => (

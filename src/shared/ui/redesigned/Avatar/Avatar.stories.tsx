@@ -7,7 +7,7 @@ import { Avatar } from './Avatar';
 
 const meta: Meta<typeof Avatar> = {
 	component: Avatar,
-	title: 'shared/Avatar',
+	title: 'shared/redesigned/Avatar',
 };
 
 export default meta;
