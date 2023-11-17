@@ -80,6 +80,8 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 						className={classNames('', {}, [className])}
 					>
 						<Text title={t('Форма авторизации')} />
+						<Text text={t('Логин: jabberwock')} />
+						<Text text={t('Пароль: 123')} />
 						{error && (
 							<Text
 								text={error}
