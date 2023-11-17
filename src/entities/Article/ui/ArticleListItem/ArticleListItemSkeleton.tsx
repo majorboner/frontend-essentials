@@ -96,7 +96,7 @@ export const ArticleListItemSkeleton = memo(
 						<Skeleton
 							width="100%"
 							height={150}
-							border="32px"
+							border="24px"
 							className={cls.img}
 						/>
 					}
