@@ -42,7 +42,7 @@
 
 ## Архитектура проекта
 
-Проект написан в соответствии с методологией [Feature Sliced Design](https://feature-sliced.design/)
+Проект написан разработан с использованием методологии [Feature Sliced Design](https://feature-sliced.design/)
 
 ---
 
@@ -85,10 +85,15 @@
 
 В проекте используются 4 вида тестов:
 
-1. Обычные unit тесты на jest - `npm run test:unit`
+1. Обычные unit тесты на jest - `npm run test:unit` 
+
 2. Тесты на компоненты с React testing library -`npm run test:unit`
+
 3. e2e тесты на cypress - `npm run test:e2e`
+
 4. Скриншотное тестирование с loki `npm run test:ui` (deprecated)
+
+
 
 Подробнее о тестах - [документация тестирование](/docs/tests.md)
 
@@ -96,7 +101,7 @@
 
 ## Линтинг
 
-В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
+В проекте используется prettiere для форматирования, eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
 используется собственный eslint plugin _eslint-plugin-feature-sliced-imports_,
@@ -171,9 +176,11 @@
 
 }
 
+
 ```
 
 </details>
+
 
 <details>
 <summary>ToggleFeature</summary>
@@ -212,6 +219,7 @@
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 
 ---
+
 
 ## Сущности (entities)
 
@@ -258,3 +266,4 @@
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 
 - [scrollRestoration](/src/features/scrollRestoration)
+
