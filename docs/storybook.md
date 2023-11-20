@@ -1,44 +1,82 @@
 ## Storybook
 
+Документация [Storybook](https://storybook.js.org/docs)
+
 В проекте для каждого компонента описываются стори-кейсы.
 Запросы на сервер мокаются с помощью storybook-addon-mock.
 
-Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
+Для корректной работы тем написан декоратор ThemeDecorator в shared/config/storybook/ThemeDecorator
+
+Файл со сторикейсами создается в папке с компонентом с расширением .stories.tsx
 
 Запустить сторибук можно командой:
 
 - `npm run storybook`
 
-Подробнее о [Storybook](/docs/storybook.md)
+Пример кода:
 
-Пример:
+<details>
+
+<summary>AppLink.stories.tsx</summary>
 
 ```typescript jsx
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
+import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '@/shared/const/theme';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { AppLink } from './AppLink';
 
-export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
+const meta: Meta<typeof AppLink> = {
+	title: 'shared/redesigned/AppLink',
+	component: AppLink,
+	decorators: [
+		(Story) => (
+			<BrowserRouter>
+				<Story />
+			</BrowserRouter>
+		),
+	],
+	args: {
+		to: 'http://localhost:6006/',
+		children: 'App Link',
+	},
 };
 
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const PrimaryLight: Story = {
+	args: {
+		variant: 'primary',
+	},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator
+				redesigned
+				theme={Theme.LIGHT}
+			>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
+};
+
+export const PrimaryDark: Story = {
+	args: {
+		variant: 'primary',
+	},
+	decorators: [
+		(Story) => (
+			<ThemeDecorator
+				redesigned
+				theme={Theme.DARK}
+			>
+				<Story />
+			</ThemeDecorator>
+		),
+	],
 };
 ```
+
+</details>
