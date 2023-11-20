@@ -237,23 +237,23 @@
 
 - [addCommentForm](/src/features/addCommentForm)
 
-- [articleEditForm](/src/features/articleEditForm)
+- [ArticleRating](/src/features/ArticleRating)
 
-- [articleRating](/src/features/articleRating)
+- [articleRecommendationsList](/src/features/ArticleRecommendationsList)
 
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [ArticleViewSelector](/src/features/ArticleViewSelector)
 
 - [AuthByUsername](/src/features/AuthByUsername)
 
-- [avatarDropdown](/src/features/avatarDropdown)
+- [AvatarDropdown](/src/features/avatarDropdown)
 
-- [editableProfileCard](/src/features/editableProfileCard)
+- [EditableProfileCard](/src/features/editableProfileCard)
 
 - [LangSwitcher](/src/features/LangSwitcher)
 
-- [notificationButton](/src/features/notificationButton)
+- [NotificationButton](/src/features/notificationButton)
 
-- [profileRating](/src/features/profileRating)
+- [ProfileRating](/src/features/profileRating)
 
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 
