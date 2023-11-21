@@ -1,5 +1,6 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDirection } from '@/shared/types/ui';
 import cls from './Dropdown.module.scss';
@@ -45,21 +46,14 @@ export function Dropdown(props: DropdownProps) {
 					);
 
 					if (item.href) {
-						const contentA = ({ active }: { active: boolean }) => (
-							<a
-								className={classNames(cls.item, { [popupCls.active]: active })}
-								href={item.href}
-							>
-								{item.content}
-							</a>
-						);
 						return (
 							<Menu.Item
-								as={Fragment}
+								as={NavLink}
 								disabled={item.disabled}
 								key={`dropdown-key-${index}`}
+								to={item.href ?? '/'}
 							>
-								{contentA}
+								{content}
 							</Menu.Item>
 						);
 					}
