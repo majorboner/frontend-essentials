@@ -1,11 +1,11 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDirection } from '@/shared/types/ui';
 import cls from './Dropdown.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
-import { AppLink } from '../../../AppLink';
 
 export interface DropDownItem {
 	disabled?: boolean;
@@ -53,7 +53,7 @@ export function Dropdown(props: DropdownProps) {
 					if (item.href) {
 						return (
 							<Menu.Item
-								as={AppLink}
+								as={NavLink}
 								to={item.href}
 								disabled={item.disabled}
 								key={`dropdown-key-${index}`}
